@@ -1,0 +1,73 @@
+{
+  "reviewer_model": "gpt-6-luna",
+  "usage": {
+    "calls": 4,
+    "input_tokens": 1913,
+    "output_tokens": 839
+  },
+  "verdicts": [
+    {
+      "kind": "merge",
+      "topic_id": "af1862b8-12bf-5dc4-bb0c-8a773f808b58",
+      "tasks": [
+        "returns-combine-binary",
+        "returns-combine-n",
+        "returns-container-bind-validated",
+        "returns-pointfree-bind-validated",
+        "returns-validated-core-container"
+      ],
+      "verdict": "reasonable",
+      "reason": "各组都在完善 returns 的 Validated：容器、错误累积组合及对应的 bind API，属于同一功能主题。"
+    },
+    {
+      "kind": "merge",
+      "topic_id": "d3d8d549-f0c0-587f-b2b0-cf778ee1bdd8",
+      "tasks": [
+        "sqlite-utils-release-version",
+        "sqlite-utils-validate-cli-exit"
+      ],
+      "verdict": "unreasonable",
+      "reason": "版本号配置与导入校验退出码可分别交付，彼此结论变化互不影响。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "testem-bail-abort-propagation"
+      ],
+      "topic_ids": [
+        "3c2a856b-c9f0-5627-8dad-c31fe83b63f0",
+        "a56aa827-b29f-5cf8-ba6c-f497926fd7dc"
+      ],
+      "verdict": "unreasonable",
+      "reason": "都属于同一条中止功能链路：App 发起中止，服务端广播、客户端处理并阻止后续消息，结论相互关联。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "tomlkit-conversion-api"
+      ],
+      "topic_ids": [
+        "be5eabfe-4e37-5cb5-ad98-fc762714f21c",
+        "dc763269-2244-5542-b7fa-1535e6ded238"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两者都是 to_inline_table 的转换规则修复，属于同一功能；应合并为一项工作。"
+    }
+  ],
+  "allow_split_or_merge_reviewed": {
+    "correct": 38,
+    "total": 65,
+    "rate": 0.5846153846153846
+  },
+  "allow_split_or_merge_reviewed_full_coverage": {
+    "correct": 33,
+    "total": 65,
+    "rate": 0.5076923076923077
+  },
+  "rejected_tasks": [
+    "sqlite-utils-release-version",
+    "sqlite-utils-validate-cli-exit",
+    "testem-bail-abort-propagation",
+    "tomlkit-conversion-api"
+  ]
+}

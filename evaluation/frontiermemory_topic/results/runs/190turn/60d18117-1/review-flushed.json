@@ -1,0 +1,69 @@
+{
+  "reviewer_model": "gpt-6-luna",
+  "usage": {
+    "calls": 4,
+    "input_tokens": 1696,
+    "output_tokens": 533
+  },
+  "verdicts": [
+    {
+      "kind": "merge",
+      "topic_id": "4f49161a-3b52-5b9e-94a3-edc52352a542",
+      "tasks": [
+        "sqlite-utils-release-version",
+        "sqlite-utils-validate-cli-exit"
+      ],
+      "verdict": "unreasonable",
+      "reason": "是否调整版本号与校验命令的退出行为可独立完成，结论互不影响，不属于同一项工作。"
+    },
+    {
+      "kind": "merge",
+      "topic_id": "dd566b18-1a87-56f9-be14-1eb24bff0ead",
+      "tasks": [
+        "testem-teamcity-bail-report",
+        "testem-xunit-bail-report"
+      ],
+      "verdict": "unreasonable",
+      "reason": "TeamCity 与 XUnit 是独立报告输出，可分别交付且互不影响，不应合为同一工作主题。"
+    },
+    {
+      "kind": "merge",
+      "topic_id": "f5d0d2f2-283f-5ae8-b1fc-a7f55964171d",
+      "tasks": [
+        "returns-combine-binary",
+        "returns-validated-core-container"
+      ],
+      "verdict": "reasonable",
+      "reason": "两组都在实现和完善 returns 的 Validated 错误累积容器及其公开 API。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "tomlkit-conversion-api"
+      ],
+      "topic_ids": [
+        "31a32368-f143-574e-a1dd-aecd8189a9a8",
+        "cfbf5e07-8ca0-5013-bf17-d6b4fe0c4ea5"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两者都是 to_inline_table 的转换规则，属于同一功能的子问题，应合并为一项工作。"
+    }
+  ],
+  "allow_split_or_merge_reviewed": {
+    "correct": 35,
+    "total": 65,
+    "rate": 0.5384615384615384
+  },
+  "allow_split_or_merge_reviewed_full_coverage": {
+    "correct": 32,
+    "total": 65,
+    "rate": 0.49230769230769234
+  },
+  "rejected_tasks": [
+    "sqlite-utils-release-version",
+    "sqlite-utils-validate-cli-exit",
+    "testem-teamcity-bail-report",
+    "testem-xunit-bail-report",
+    "tomlkit-conversion-api"
+  ]
+}

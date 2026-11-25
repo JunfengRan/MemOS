@@ -1,0 +1,87 @@
+{
+  "reviewer_model": "gpt-6-luna",
+  "usage": {
+    "calls": 5,
+    "input_tokens": 1975,
+    "output_tokens": 601
+  },
+  "verdicts": [
+    {
+      "kind": "merge",
+      "topic_id": "72044c2f-0baf-54f1-99b7-c248806529ec",
+      "tasks": [
+        "sqlite-utils-release-version",
+        "sqlite-utils-validate-cli-exit"
+      ],
+      "verdict": "unreasonable",
+      "reason": "版本号是否调整与命令退出码修正可分别交付，结论互不影响，属于不同工作。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "returns-validatedlike-interface-laws"
+      ],
+      "topic_ids": [
+        "6b7f5dc5-eee5-56c9-bf1d-8f324a3a8f25",
+        "83557980-d153-5f3e-a2b3-e74721f85c05"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两者都围绕 ValidatedLikeN 接口及其专属失败律，属于同一项工作。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "testem-bail-state-reset"
+      ],
+      "topic_ids": [
+        "371bc91d-efa5-5c67-b458-7b7852717179",
+        "8dd59a65-ff83-531c-8455-8bf846f24659"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两者都属于 resetBailState 的重置语义，子报告器输出是同一功能的补充要求，不能独立交付。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "testem-reporter-bail-state"
+      ],
+      "topic_ids": [
+        "019305ab-9846-52da-a303-0616b572afe8",
+        "2d052e63-8743-5310-aa66-455a474c3a19",
+        "436a3c9c-6b46-510c-bc37-576550a729e4",
+        "92935f8b-6d71-5a49-b986-d79158a95ec0"
+      ],
+      "verdict": "unreasonable",
+      "reason": "这些都是同一套 bail 功能的状态、报告、事件和记录规则，彼此关联且结论相互影响。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "tomlkit-conversion-api"
+      ],
+      "topic_ids": [
+        "04f12f8f-6e80-580a-83bc-e68a1301a923",
+        "8f50d065-d535-5d35-abd5-62901b44049b"
+      ],
+      "verdict": "reasonable",
+      "reason": "分别处理 AoT 拒绝转换与点号键后代规范化，可独立实现、验证，结论互不影响。"
+    }
+  ],
+  "allow_split_or_merge_reviewed": {
+    "correct": 32,
+    "total": 65,
+    "rate": 0.49230769230769234
+  },
+  "allow_split_or_merge_reviewed_full_coverage": {
+    "correct": 29,
+    "total": 65,
+    "rate": 0.4461538461538462
+  },
+  "rejected_tasks": [
+    "returns-validatedlike-interface-laws",
+    "sqlite-utils-release-version",
+    "sqlite-utils-validate-cli-exit",
+    "testem-bail-state-reset",
+    "testem-reporter-bail-state"
+  ]
+}

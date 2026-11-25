@@ -1,0 +1,72 @@
+{
+  "reviewer_model": "gpt-6-luna",
+  "usage": {
+    "calls": 4,
+    "input_tokens": 1706,
+    "output_tokens": 414
+  },
+  "verdicts": [
+    {
+      "kind": "merge",
+      "topic_id": "ac0a20ee-f126-5d17-bba2-25873cefa4eb",
+      "tasks": [
+        "returns-container-bind-validated",
+        "returns-pointfree-bind-validated"
+      ],
+      "verdict": "reasonable",
+      "reason": "容器方法与 pointfree 包装及导出共同补齐同一 bind_validated API。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "brightpath-renewal-seat-change"
+      ],
+      "topic_ids": [
+        "0d814924-1f51-5615-9b5d-1967872b4bd8",
+        "a45a41ca-d89e-556d-8b98-d86691676020"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两个主题是同一项续约席位变化均值计算，结论完全相同，不是独立工作。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "clack-async-autocomplete-async-load-error"
+      ],
+      "topic_ids": [
+        "01e308d7-1e53-5a89-bde8-c4eba48597b2",
+        "aa56b32e-42f1-53be-8b3c-de21a08e1a54",
+        "de1714c0-86ad-537c-ab03-0b72ef9d2f63"
+      ],
+      "verdict": "unreasonable",
+      "reason": "三者都属于同一异步加载错误状态功能，错误暴露、重试状态与 AbortError 处理相互关联。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "tomlkit-conversion-api"
+      ],
+      "topic_ids": [
+        "067ef9a5-ddd0-5505-920e-0f94d725be9e",
+        "c6dba195-b2d9-589c-a558-27e29524cd92"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两者都是 to_inline_table 的转换规则修复，属于同一功能的边界情况，不能独立划分。"
+    }
+  ],
+  "allow_split_or_merge_reviewed": {
+    "correct": 30,
+    "total": 65,
+    "rate": 0.46153846153846156
+  },
+  "allow_split_or_merge_reviewed_full_coverage": {
+    "correct": 27,
+    "total": 65,
+    "rate": 0.4153846153846154
+  },
+  "rejected_tasks": [
+    "brightpath-renewal-seat-change",
+    "clack-async-autocomplete-async-load-error",
+    "tomlkit-conversion-api"
+  ]
+}
