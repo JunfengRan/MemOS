@@ -1,0 +1,25 @@
+From 8dcaada402f7906ed234a574377f11d4858be27a Mon Sep 17 00:00:00 2001
+From: Junfeng Ran <ranjf@memtensor.cn>
+Date: Tue, 24 Nov 2026 20:32:01 +0800
+Subject: [PATCH] ablation: one-Turn tasks need a member decision again (undo
+ fb9bc811 rule)
+
+---
+ src/memos/project_memory/add_algorithm.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/memos/project_memory/add_algorithm.py b/src/memos/project_memory/add_algorithm.py
+index 2f6ab352..ba981dcc 100644
+--- a/src/memos/project_memory/add_algorithm.py
++++ b/src/memos/project_memory/add_algorithm.py
+@@ -475,7 +475,7 @@ def _has_evidence(episodes: list[dict]) -> bool:
+         if d["kind"] in ("timeline", "experience") and d.get("origin") == "delegated"
+         for message in (d.get("source") or {}).get("message_ids", [])
+     }
+-    return useful and (decision or max(turn_count, len(turn_ids)) >= 2 or len(results) >= 2)
++    return useful and (decision or max(turn_count, len(turn_ids)) >= 2)
+
+
+ def _formation_candidates(scoped: dict[str, list[dict]]) -> list[dict]:
+--
+2.54.0 (Apple Git-157)

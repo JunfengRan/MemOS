@@ -1,0 +1,3818 @@
+{
+  "turns": [
+    {
+      "turn_id": "fm-x22-m174",
+      "episode_id": "ecd99897-e9c9-4311-813c-eeda5916ecc6",
+      "topic_ids": [
+        "ec9436e1-5e61-5ab9-9a77-24591dcfd9e1"
+      ],
+      "witness_topic_ids": [
+        "ec9436e1-5e61-5ab9-9a77-24591dcfd9e1"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 2,
+      "draft_kinds": [
+        "decision",
+        "decision"
+      ],
+      "episode_summary": "成员要求补齐 duration history 缺失或损坏时的 fallback：按 `durationFallbackStrategy` 处理，`'hash'` 复用现有 hash sharding；`'equal-split'` 按 path 排序后，当 `(i % count) + 1 === shardIndex` 时分配文件 `i`。Agent 回应称会在分配前解析所有 project ",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x34-m107",
+      "episode_id": "e71ec4fc-db03-4f44-afff-56a207c19e46",
+      "topic_ids": [
+        "f2eb9f61-0282-5d53-95ee-8e230248319f"
+      ],
+      "witness_topic_ids": [
+        "f2eb9f61-0282-5d53-95ee-8e230248319f"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 4,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求把检测从 `result instanceof Promise` 改为：调用 resolver 一次，用返回值的 `result?.then` 是否为函数判断异步，且该次调用必须仍是首次 fetch，不得为检测再次调用 resolver。Agent 以单次存储的 resolver 结果加 thenable 守卫实现，跨 realm 探针确认只调用一次、外部 Promise 被识别为 the",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x07-m001",
+      "episode_id": "20bdc8e6-9d91-4a8f-abae-5a13a13dab32",
+      "topic_ids": [
+        "bacfdd3b-66e8-5594-a833-b2c0dd46c4ce"
+      ],
+      "witness_topic_ids": [
+        "bacfdd3b-66e8-5594-a833-b2c0dd46c4ce"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 6,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求基于 v1.0 renewal/churn 数据与 pricing log，统计 Brightpath 客户每次有席位变化的续约的平均席位变化（增或减）；计算时将 v4.2 pricing 生效起始年份改为 2023，并使用 monthly price per user 换算席位变化，结果按 'Average ARR-equivalent seat change: X.XX seat eq",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x16-m001",
+      "episode_id": "cf071c81-4871-4a6c-bd5c-52fb7a396792",
+      "topic_ids": [
+        "100078b0-663f-51c9-996d-b7ec45602cf6"
+      ],
+      "witness_topic_ids": [
+        "100078b0-663f-51c9-996d-b7ec45602cf6"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 1,
+      "draft_kinds": [
+        "timeline"
+      ],
+      "episode_summary": "成员要求判断平均调整后每次停电故障概率最高的资产类型是否也是每资产平均 VOLL 最高的类型；VOLL 定义为 SAIDI × 受影响客户数 × 每客户分钟假定欧元值。若不是，需指出 VOLL 最高的资产类型，并给出该类型的平均调整后每次停电故障概率和每资产平均 VOLL。输出要求：金额四舍五入到最近 0.1 million，百分比四舍五入到最近 0.01%。Agent 使用 EuroGrid_O",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x26-m093",
+      "episode_id": "d9cf138e-7c99-4add-b84b-3c26ead821b4",
+      "topic_ids": [
+        "c4417f46-8c40-54ee-908f-d6a6270bc3d4"
+      ],
+      "witness_topic_ids": [
+        "c4417f46-8c40-54ee-908f-d6a6270bc3d4"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 1,
+      "draft_kinds": [
+        "decision"
+      ],
+      "episode_summary": "成员确认 `combine` 可用，并要求新增 `Validated.combine_n(values, function)`：接收一个校验元组和 N 元函数，按稳定的从左到右顺序累积全部错误。Agent 回应将基于现有 `combine` 以 applicative fold 实现 `combine_n`，继承逐元素顺序保证，仅当所有校验有效时才调用 N 元函数，空元组自然调用零参函数。",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x17-m001",
+      "episode_id": "dcc277f5-b4ad-4fb2-a7de-a982e6670fc9",
+      "topic_ids": [
+        "28f3eadf-49cf-5917-9841-3a48072342df"
+      ],
+      "witness_topic_ids": [
+        "28f3eadf-49cf-5917-9841-3a48072342df"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 1,
+      "draft_kinds": [
+        "timeline"
+      ],
+      "episode_summary": "成员要求分析内容清单并向内容团队（[email protected]）推荐优先级，使用电子表格 'Content Inventory'（ID: ss_inv）的工作表 'All Content'（ID: ws_content），并在开始前检查 Slack 和收件箱中的指南。Agent 依据收件箱指南执行仅限已发布内容的差距分析，按各漏斗阶段的已发布篇数排序，并附精确计数和参考号 CGA-2026-",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x28-m022",
+      "episode_id": "98d30e5d-7dcb-4e9e-92b7-9f5a6c18ff7b",
+      "topic_ids": [
+        "703fd3ce-298e-5657-87ae-83a3c7f00246"
+      ],
+      "witness_topic_ids": [
+        "703fd3ce-298e-5657-87ae-83a3c7f00246"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 1,
+      "draft_kinds": [
+        "decision"
+      ],
+      "episode_summary": "成员要求接受正整数阈值：`true` 表示 1，`false` 禁用；并要求对 abort/output 流程先检查现有架构再自行判断。成员未对 abort/output 的具体实现给出结论。",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x15-m001",
+      "episode_id": "4d08dae6-e647-4f57-9cc7-3b10290c75ac",
+      "topic_ids": [
+        "100078b0-663f-51c9-996d-b7ec45602cf6"
+      ],
+      "witness_topic_ids": [
+        "100078b0-663f-51c9-996d-b7ec45602cf6"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 2,
+      "draft_kinds": [
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求判断平均每次停电调整后故障概率最高的资产类型是否也是每资产平均VOLL最高者，VOLL定义为SAIDI、受影响客户数与假设每客户分钟欧元数的乘积；若不是，需指出VOLL最高的资产类型及其平均调整后故障概率与平均VOLL，并将金额四舍五入到0.1百万、百分比到0.01%。Agent报告：变压器以54.09%居平均调整后故障概率之首，输电线路以€82.2百万居平均VOLL之首；输电线路平均调整",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x10-m001",
+      "episode_id": "62c0aba4-fb07-4ae2-908b-fc2afc584040",
+      "topic_ids": [
+        "080d5f2c-1265-59d6-bcdc-93adc1feddb9"
+      ],
+      "witness_topic_ids": [
+        "080d5f2c-1265-59d6-bcdc-93adc1feddb9"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 7,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求对法国和荷兰按总停电时长评估天气相关停电原因，将洪水或风暴归为 \"Weather - Storm\"，将高温或野火归为 \"Weather - Heat\"；对每个国家给出该原因下总停电时长最高的天气原因、该原因每年总事件数及每次事件平均停电分钟数，并说明 Outage ID 不代表单个事件、可能合并多个事件，最终答案保留两位小数并直接在对话中报告。Agent 给出法国 Weather - He",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x23-m012",
+      "episode_id": "13b9c377-fc04-4c86-b020-d3d62aeb04da",
+      "topic_ids": [
+        "703fd3ce-298e-5657-87ae-83a3c7f00246"
+      ],
+      "witness_topic_ids": [
+        "703fd3ce-298e-5657-87ae-83a3c7f00246"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 5,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision"
+      ],
+      "episode_summary": "成员要求实现 `bail_on_test_failure` 配置项，默认 `false`，在 dev 和 CI 中生效；`true` 表示首个符合条件的失败即中止，同时支持正整数 `N` 在第 N 个非 skipped/non-todo 失败时中止；保留正常报告、hooks 和退出处理，使用抑制后续事件的 abort 路径而非直接杀进程；暂不改动 release metadata。",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x19-m017",
+      "episode_id": "93a6c0af-303b-4c1a-a0f1-b95a79d5dfd8",
+      "topic_ids": [
+        "af37ee43-607a-5e92-84a2-9e99526ddc01"
+      ],
+      "witness_topic_ids": [
+        "af37ee43-607a-5e92-84a2-9e99526ddc01"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 9,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision"
+      ],
+      "episode_summary": "成员要求实现表级 truthy 断言（非“有行即失败”），API 为 add_import_invariant(table, sql) -> invariant_id、remove_import_invariant(table, invariant_id)、list_import_invariants(table) -> [{\"id\", \"expression\"}]、validate_import",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x33-m013",
+      "episode_id": "1fbe7602-4d09-4dc5-925b-79fc218d0c68",
+      "topic_ids": [
+        "41c0061c-d586-5049-8cbf-b3e8c1be422c"
+      ],
+      "witness_topic_ids": [
+        "41c0061c-d586-5049-8cbf-b3e8c1be422c"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 5,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision"
+      ],
+      "episode_summary": "成员要求实现 JSON 解析的三种模式：普通 JSON 顶层为数组时逐元素产出、否则产出单值；支持 NDJSON 和 JSON seq。媒体类型需支持 `application/ndjson`、`application/x-ndjson`、`application/json-seq`，`+json` 仅限 `application/*+json`，不需要其他别名。",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x08-m001",
+      "episode_id": "249110f6-9c04-442c-ba89-2624898e4191",
+      "topic_ids": [
+        "83ebed1f-e392-5074-9483-a692c2c1e92b"
+      ],
+      "witness_topic_ids": [
+        "83ebed1f-e392-5074-9483-a692c2c1e92b"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 3,
+      "draft_kinds": [
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求基于 Brightpath 的 Discount Approval Logs 审查每位审批人的总分与排名，并按四项标准计分：Violated Policy Threshold、Negotiation-Based Discounts、Pilot-Program Discounts、Level of Approval；分数四舍五入到整数，并列同分，总分并列时用 criterion (4) 的 ",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x25-m069",
+      "episode_id": "b1fecd2a-4cc4-498a-b609-8b18ea27ed49",
+      "topic_ids": [
+        "3a188532-cfe3-5ca8-a4f8-655e7b958ff3"
+      ],
+      "witness_topic_ids": [
+        "3a188532-cfe3-5ca8-a4f8-655e7b958ff3"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 5,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求修正 `to_inline_table` 的内联转换：目标表下方任意位置存在 `AoT` 时必须抛出 `ConversionError`，不得把该 AoT 转成数组，且错误需在 `key_path` 中携带请求的点分路径。Agent 报告已实现任意递归深度下 AoT 失败并携带 `ConversionError(key_path=...)`，失败时文档保持逐字节不变，成功路径与已内联路径不",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x05-m001",
+      "episode_id": "4b3efbb1-bd54-400b-951c-632b8c80dcb5",
+      "topic_ids": [
+        "5b0c9337-ab5d-506e-b134-8996a18cd1ef"
+      ],
+      "witness_topic_ids": [
+        "5b0c9337-ab5d-506e-b134-8996a18cd1ef"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 2,
+      "draft_kinds": [
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求用 Deal Win Rate Target 与 Brightpath Deal Transactions 计算两项产出：Upper Mid-Market 段按 Target Revenue Mix Strategy 的目标扩张份额、仅取 Won 交易的实际平均扩张交易规模，求 Implied Deal Volume 并四舍五入到整数交易；Europe - Enterprise 段以欧洲 ",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x02-m001",
+      "episode_id": "884fb828-ea5c-4aef-95a9-78b431f43def",
+      "topic_ids": [],
+      "witness_topic_ids": [],
+      "status": "no_drafts",
+      "outcome": "skipped",
+      "close_reason": "idle",
+      "extract_status": "skipped",
+      "draft_count": 0,
+      "draft_kinds": [],
+      "episode_summary": "成员要求基于最新定价版本、按细分市场的收入数据和折扣审批日志，分别计算 Business 与 Growth 两个 tier 的平均折扣百分比（Company Size 区间取中点作为用户数），再计算各 tier 折扣相对其平均政策阈值的 %variance，并以 Business discount、Growth discount、Business threshold-relative varian",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x20-m092",
+      "episode_id": "6b57c105-522b-4a2f-b141-3237459874eb",
+      "topic_ids": [
+        "708589c4-3dad-5ff2-b6bf-7fbd0bd380ba"
+      ],
+      "witness_topic_ids": [
+        "708589c4-3dad-5ff2-b6bf-7fbd0bd380ba"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 4,
+      "draft_kinds": [
+        "decision",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求修复 `to_inline_table` 对点号键后代的处理：`[a]` 下 `b.c = 1` 在分支内联时保留内部点号标记，可能输出非法 `b. = {...}`；需规范化该情况，保留值并让 `parse(dumps(doc))` 成功。Agent 报告已清除仅用于表示的延续标记，并扩展规范化以合并重复点号分支，保留兄弟分支和原始顺序；精确多分支往返、mypy/Ruff 及全部 964",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x09-m001",
+      "episode_id": "999498af-1e20-4401-8971-7cbc55f91873",
+      "topic_ids": [
+        "080d5f2c-1265-59d6-bcdc-93adc1feddb9"
+      ],
+      "witness_topic_ids": [
+        "080d5f2c-1265-59d6-bcdc-93adc1feddb9"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 5,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "timeline"
+      ],
+      "episode_summary": "成员要求对法国和荷兰按总停电时长评估天气类停电原因，将洪水或风暴归为 \"Weather - Storm\"，将高温或野火归为 \"Weather - Heat\"；每个国家给出该原因下按停电时长的首要天气原因、该原因每年总事件数及每次事件平均停电分钟数，并说明 Outage ID 可能合并多个事件；最终答案四舍五入到两位小数并直接在对话中报告。Agent 报告法国首要为 Weather - Heat（2",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x14-m001",
+      "episode_id": "df53d50c-5430-4162-9127-4c2f8e544669",
+      "topic_ids": [
+        "ab84c341-9953-511c-9ddb-ddd4326ac67a"
+      ],
+      "witness_topic_ids": [
+        "ab84c341-9953-511c-9ddb-ddd4326ac67a"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 4,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "timeline"
+      ],
+      "episode_summary": "成员要求计算德国和荷兰可再生能源管道（仅按95%计）在2027年和2028年分别覆盖其年度总负荷的百分比，使用历史平均总负荷作为未来需求估计，输出年份和覆盖率百分比，最终百分比四舍五入到0.01%，以简短消息返回。Agent 定位了国家历史负荷工作簿和可再生能源并网队列工作簿，并给出结果：2027年德国2.12%、荷兰2.21%；2028年德国1.13%、荷兰5.78%。",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x04-m001",
+      "episode_id": "d5006a87-5ba2-40dd-8641-3b4daee0e82b",
+      "topic_ids": [
+        "83ebed1f-e392-5074-9483-a692c2c1e92b"
+      ],
+      "witness_topic_ids": [
+        "83ebed1f-e392-5074-9483-a692c2c1e92b"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 4,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "timeline"
+      ],
+      "episode_summary": "成员要求使用 Brightpath 的 Discount Approval Logs 审查每位审批人的总分与排名，并按四项标准计分：Violated Policy Threshold、Negotiation-Based Discounts、Pilot-Program Discounts、Level of Approval；分数四舍五入到整数，并列同分，总分并列时用 criterion (4) 的 ",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x29-m001",
+      "episode_id": "ab57e864-537d-41c1-95a4-8970b72581a6",
+      "topic_ids": [],
+      "witness_topic_ids": [],
+      "status": "unassigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 4,
+      "draft_kinds": [
+        "timeline",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求构建可复用的 Word2Vec 文本处理组件，使用已安装的 NLTK 和 Gensim，接收文本字符串集合，按本任务既定预处理约定处理并返回训练好的 Word2Vec 模型，同时按此前实现使用的可调用接口和产物布局集成。Agent 报告已在 /workspace/solution.py 实现 task_func：未提供停用词时默认使用 NLTK 英文停用词并转为 set 以 O(1) 查找",
+      "staged_status": "archived",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x21-m155",
+      "episode_id": "d39e69c8-4ad0-49bb-a1e9-92895b3812ba",
+      "topic_ids": [
+        "c4417f46-8c40-54ee-908f-d6a6270bc3d4"
+      ],
+      "witness_topic_ids": [
+        "c4417f46-8c40-54ee-908f-d6a6270bc3d4"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 4,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求新增 `Validated.combine_n(containers, function)`：接收 N 个校验组成的元组，仅当全部有效时调用 N 元函数，否则按稳定输入顺序累积每个错误元组。Agent 随后报告 `combine_n` 已支持空、固定及任意长度元组，常见元数保留异构参数类型，按输入顺序累积所有错误，失败时不调用回调，并已纳入特定接口；运行时元数/顺序/回调检查、全量源码 m",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x01-m001",
+      "episode_id": "0aa84416-80a0-4058-a4a4-6837ffdb2182",
+      "topic_ids": [
+        "5b0c9337-ab5d-506e-b134-8996a18cd1ef"
+      ],
+      "witness_topic_ids": [
+        "5b0c9337-ab5d-506e-b134-8996a18cd1ef"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 5,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求用 Deal Win Rate Target 与 Brightpath Deal Transactions 计算两项产出：Upper Mid-Market 细分达到 Expansion 目标收入占比所需的 Implied Deal Volume（按 Won 交易的实际平均单笔规模，取整到整笔交易），以及 Europe - Enterprise 的 Required Pipeline Cap",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x06-m001",
+      "episode_id": "7d3f76fa-7ce4-4cb4-8885-50a413757bc1",
+      "topic_ids": [],
+      "witness_topic_ids": [],
+      "status": "unassigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 4,
+      "draft_kinds": [
+        "timeline",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求基于最新定价版本、按细分市场的收入数据和折扣审批日志，分别计算 Business 与 Growth 两个层级的平均折扣百分比（公司规模区间取中点作为用户数），再计算各层级折扣相对其平均政策阈值的 %variance，并以 Business discount、Growth discount、Business threshold-relative variance、Growth thresho",
+      "staged_status": "archived",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x24-m119",
+      "episode_id": "77eb0e17-d5a4-495c-bd7f-97010b99f506",
+      "topic_ids": [
+        "00ff7a1d-46f3-572d-b000-f5ce2f49e67e"
+      ],
+      "witness_topic_ids": [
+        "00ff7a1d-46f3-572d-b000-f5ce2f49e67e"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 7,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求关闭 checkpoint API 的上下文管理器形式，改为显式托管检查点接口：`enable_safe_import()` / `disable_safe_import()`、`create_import_checkpoint() -> checkpoint_id`、`rollback_to_checkpoint(id)`、`commit_checkpoint(id)`、`cleanup",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x31-m047",
+      "episode_id": "9c8d35fd-729f-4338-83da-4bfad1591916",
+      "topic_ids": [
+        "88b5a181-22ba-5e36-9fb5-3270c0e28cee"
+      ],
+      "witness_topic_ids": [
+        "88b5a181-22ba-5e36-9fb5-3270c0e28cee"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 4,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求 iter_json() / aiter_json() 在缺失或不支持的 Content-Type 时抛出 httpx.DecodingError 而非 ValueError；对声明了无效 charset 的情况也不得静默回退到检测，同样抛出 DecodingError，并要求先修复。Agent 报告已修改错误路径为抛出 httpx.DecodingError，保留请求上下文、关闭一次性流",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x13-m001",
+      "episode_id": "7494efbb-5e3c-44c9-8290-ada73de6d2eb",
+      "topic_ids": [
+        "ab84c341-9953-511c-9ddb-ddd4326ac67a"
+      ],
+      "witness_topic_ids": [
+        "ab84c341-9953-511c-9ddb-ddd4326ac67a"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 1,
+      "draft_kinds": [
+        "timeline"
+      ],
+      "episode_summary": "成员要求计算德国和荷兰的可再生能源项目管线（按 95% 计）在 2027 和 2028 年分别覆盖其年度总负荷的百分比，使用历史平均总负荷作为未来需求估计，最终百分比四舍五入到 0.01%，并以简短消息返回年份和覆盖率。Agent 报告 2027 年合计覆盖约 1.61%、2028 年约 2.02%，并说明采用 Maelin 的 Brainstorming 笔记方法：使用 EuroGrid_Equ",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x30-m001",
+      "episode_id": "5d9fac17-64ff-453d-a4f1-af235f57addc",
+      "topic_ids": [],
+      "witness_topic_ids": [],
+      "status": "no_drafts",
+      "outcome": "skipped",
+      "close_reason": "idle",
+      "extract_status": "skipped",
+      "draft_count": 0,
+      "draft_kinds": [],
+      "episode_summary": "成员要求构建可复用的 Word2Vec 文本处理组件，使用已安装的 NLTK 和 Gensim，接收文本字符串集合，应用本任务既定的预处理约定，返回训练好的 Word2Vec 模型，并按此前实现的可调用接口和产物布局集成。Agent 完成 /workspace/solution.py：min_count=1 保留单词，ALPHANUMERIC 正则加小写清洗，默认移除 nltk 停用词并支持自定义",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x03-m001",
+      "episode_id": "2ed7fe83-e010-438e-8af1-7f4f37fde11f",
+      "topic_ids": [
+        "bacfdd3b-66e8-5594-a833-b2c0dd46c4ce"
+      ],
+      "witness_topic_ids": [
+        "bacfdd3b-66e8-5594-a833-b2c0dd46c4ce"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 4,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "timeline"
+      ],
+      "episode_summary": "成员要求使用最新续约/流失数据（v1.0）和定价日志，计算 Brightpath 客户在每次有座位变化的续约中的平均座位变化（增加或减少）；计算时将 v4.2 定价生效起始年份改为 2023，并使用每用户月价计算座位变化；结果按“Average ARR-equivalent seat change: X.XX seat equivalents”格式保留两位小数输出。Agent 报告结果为 -19.",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x18-m001",
+      "episode_id": "02e9701b-0603-47ba-9a0a-9da5f09b17ff",
+      "topic_ids": [
+        "28f3eadf-49cf-5917-9841-3a48072342df"
+      ],
+      "witness_topic_ids": [
+        "28f3eadf-49cf-5917-9841-3a48072342df"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 1,
+      "draft_kinds": [
+        "timeline"
+      ],
+      "episode_summary": "成员要求分析内容清单并为内容团队（[email protected]）推荐优先级，使用表格 'Content Inventory'（ID: ss_inv）的工作表 'All Content'（ID: ws_content），并在开始前检查 Slack 和收件箱中的指南。Agent 按 Content Audit Guidelines 邮件执行：仅统计已发布内容，按漏斗阶段已发布篇数做缺口评分，保留",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x27-m144",
+      "episode_id": "c04404eb-2eba-4676-91c4-40fd0f673d13",
+      "topic_ids": [
+        "ec9436e1-5e61-5ab9-9a77-24591dcfd9e1"
+      ],
+      "witness_topic_ids": [
+        "ec9436e1-5e61-5ab9-9a77-24591dcfd9e1"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 3,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision"
+      ],
+      "episode_summary": "成员要求新增可配置的缺失历史回退策略 `sequence.durationFallbackStrategy: 'hash' | 'equal-split'`，默认 `'hash'`，启动时校验并序列化到 worker；`'equal-split'` 下按规范化路径排序文件，并用 `(i % shardCount) + 1 === shardIndex` 选择文件。",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x12-m001",
+      "episode_id": "e1595a45-b10c-4979-84fe-096ca1931f48",
+      "topic_ids": [
+        "e7e60f86-0a42-5fc0-87f7-b69e138150ca"
+      ],
+      "witness_topic_ids": [
+        "e7e60f86-0a42-5fc0-87f7-b69e138150ca"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 1,
+      "draft_kinds": [
+        "timeline"
+      ],
+      "episode_summary": "成员要求用 EuroGrid 各部门 headcount 与所附 benchmarks 计算各部门 headcount 的 estimated total cost，所有最终金额四舍五入到整美元，并以消息形式列出各部门及对应 USD 总成本。Agent 依据 Maelin 的 Brainstorming.docx 中“Headcount cost build-up – per department",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x11-m001",
+      "episode_id": "dc6a6340-5126-4357-9e36-fee78ceea9a8",
+      "topic_ids": [
+        "e7e60f86-0a42-5fc0-87f7-b69e138150ca"
+      ],
+      "witness_topic_ids": [
+        "e7e60f86-0a42-5fc0-87f7-b69e138150ca"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 2,
+      "draft_kinds": [
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求用 EuroGrid 各部门 headcount 和附件 benchmarks 计算每个部门 headcount 的 estimated total cost，所有最终金额四舍五入到 full USD，并以消息形式列出各部门及对应 USD 总成本。Agent 报告共五个部门、合计 6,500 名员工，benchmark 定义七个 salary layers 和部门-specific spa",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x32-m012",
+      "episode_id": "5cddf168-a57f-445b-9e27-bafeaf43933b",
+      "topic_ids": [
+        "f2eb9f61-0282-5d53-95ee-8e230248319f"
+      ],
+      "witness_topic_ids": [
+        "f2eb9f61-0282-5d53-95ee-8e230248319f"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 3,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision"
+      ],
+      "episode_summary": "成员要求 autocomplete resolver 的 API 细节：不要用 arity/constructor 判断异步，而是调用 provider 并检查返回值是否 thenable，且把这次调用直接作为 fetch；resolver 接收 `search` 和 `{ signal }`（`options(search, { signal })`），以便异步 provider 能干净取消；零",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x34-m117",
+      "episode_id": "a42d1695-9240-4814-a2d3-bdcf86e7839f",
+      "topic_ids": [
+        "4daa7389-276f-52a2-8898-f466af9a962e"
+      ],
+      "witness_topic_ids": [
+        "4daa7389-276f-52a2-8898-f466af9a962e"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 3,
+      "draft_kinds": [
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求为核心 prompt 及两个 wrapper 增加可配置的 `debounceMs`，默认取 100–300ms 的合理值，并确保新查询在调用 resolver 前取消上一个 debounce。Agent 以 200ms 默认值实现，`debounceMs: 0` 可关闭防抖，初始解析与静态数组过滤保持立即执行；新查询会清除旧计时器、中止活动查询信号、清空过期选项并进入 loading 后",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x19-m021",
+      "episode_id": "d2ae5cde-65d9-4d85-a5b9-bcb1e626b2d7",
+      "topic_ids": [
+        "00ff7a1d-46f3-572d-b000-f5ce2f49e67e"
+      ],
+      "witness_topic_ids": [],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 4,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision"
+      ],
+      "episode_summary": "成员要求补齐 checkpoint API：enable_safe_import() / disable_safe_import()、create_import_checkpoint() -> checkpoint_id、rollback_to_checkpoint(id)、commit_checkpoint(id)、cleanup_checkpoint(id)；checkpoint 需支持嵌套；",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x33-m016",
+      "episode_id": "7eda6b3c-bacd-4039-aaec-491e57ab3a38",
+      "topic_ids": [
+        "41c0061c-d586-5049-8cbf-b3e8c1be422c"
+      ],
+      "witness_topic_ids": [
+        "41c0061c-d586-5049-8cbf-b3e8c1be422c"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 5,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision"
+      ],
+      "episode_summary": "成员确定了 JSON 解析的边界规则：内容类型不属于 JSON 系列时抛出 `httpx.DecodingError`，不回退到缺失或随机内容类型；NDJSON 空行忽略；畸形或截断载荷包装为 `httpx.DecodingError`，不泄漏 `json.JSONDecodeError`；被拒绝的内容类型和原始解析错误作为结构化上下文挂在领域错误上，调用方无需从消息文本恢复；JSON-seq 按",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x23-m096",
+      "episode_id": "670327c4-7176-4fcc-8ce1-256f0ebd8b4e",
+      "topic_ids": [
+        "376efaad-a0ac-506b-9340-a2e0722b0e72"
+      ],
+      "witness_topic_ids": [
+        "376efaad-a0ac-506b-9340-a2e0722b0e72"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 5,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求补上缺失的重置入口：暴露 `App.resetBailState()`，用于重置 reporter 的 bail 状态、清除 App 的 abort 跟踪，并调用 `Server.resetAbort()`，使下一次 dev/manual 运行能正常广播和执行；同时要求在每个顶层运行开始时使用该显式重置路径，而不是让 `Reporter.onStart()` 从 launcher 数据推断",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x28-m123",
+      "episode_id": "16d5d9e9-3462-4fde-b943-1f738ae3196e",
+      "topic_ids": [
+        "4bf48b49-cc0e-5b82-8d2c-efa6203dfb19"
+      ],
+      "witness_topic_ids": [
+        "4bf48b49-cc0e-5b82-8d2c-efa6203dfb19"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 2,
+      "draft_kinds": [
+        "decision",
+        "timeline"
+      ],
+      "episode_summary": "成员要求修正 TAP/Dot 摘要标签：两者都应输出 `Bail out!` 并带原因和计数，摘要中精确使用 `# bailed`、`# ran before bail N`、`# suppressed N`。Agent 报告 TAP 和 Dot 已按要求的精确摘要标签输出，并验证了 bailout 原因/计数与 suppressed 结果的输出，现有 reporter 测试和 lint 通过。",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x22-m181",
+      "episode_id": "e0c6e439-b95e-4edc-9da6-5a44922cf7da",
+      "topic_ids": [
+        "695761ac-3e36-56c9-b35d-2653d3a74200"
+      ],
+      "witness_topic_ids": [
+        "695761ac-3e36-56c9-b35d-2653d3a74200"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 6,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求把 `recordFileDurations` 接入 `core.ts` 的最终清理阶段，写入取整的整数毫秒时长到各项目 history 文件，创建父目录、保留无关条目，并遵守 `durationHistoryMaxRuns`：`maxRuns === 1` 写 `{ duration, recordedAt }`；`maxRuns > 1` 写 `{ observations: [...",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x24-m138",
+      "episode_id": "26b4833b-2a6c-4f6e-9f35-3de1f38f1a2f",
+      "topic_ids": [
+        "af37ee43-607a-5e92-84a2-9e99526ddc01"
+      ],
+      "witness_topic_ids": [
+        "af37ee43-607a-5e92-84a2-9e99526ddc01"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 6,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求将 invariant API 改为表作用域、基于不透明 ID 的接口：`add_import_invariant(table, sql) -> invariant_id`、`remove_import_invariant(table, invariant_id)`、`list_import_invariants(table) -> [{\"id\": ..., \"expression\": .",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x31-m059",
+      "episode_id": "68aaa635-55eb-490c-8538-309cf2d32c17",
+      "topic_ids": [
+        "41c0061c-d586-5049-8cbf-b3e8c1be422c"
+      ],
+      "witness_topic_ids": [
+        "41c0061c-d586-5049-8cbf-b3e8c1be422c"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 5,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求修正 iter_json()/aiter_json() 对 application/json 与 application/*+json 的顶层数组语义：顶层 JSON 值为数组时逐个产出数组元素，而非把整个数组对象作为单个值；非数组顶层值仍只产出一次，并要求先修复该行为。Agent 报告已按顶层 JSON 语法实现，使 object_pairs_hook 等钩子不会把 JSON 对象拆成多",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x27-m175",
+      "episode_id": "fdfb295b-59c6-4506-bf60-35b53c2f5764",
+      "topic_ids": [
+        "695761ac-3e36-56c9-b35d-2653d3a74200"
+      ],
+      "witness_topic_ids": [
+        "695761ac-3e36-56c9-b35d-2653d3a74200"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 8,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "timeline"
+      ],
+      "episode_summary": "成员要求接入 `sequence.recordFileDurations`（默认 `false`），在全部测试结束后的 final cleanup 中把取整的整数毫秒耗时写入历史文件，创建父目录，保留其他文件的条目，并按 `durationHistoryMaxRuns` 为每个文件保留最近 N 次观测；N 为 1 时写单条目结构，N 大于 1 时写 `{ observations }`。Agent",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x26-m112",
+      "episode_id": "312e6a6d-cbf9-4622-bf0d-7681456e13a5",
+      "topic_ids": [
+        "7cb64ded-f39a-5615-b0a8-c3ee3cb0fa4c"
+      ],
+      "witness_topic_ids": [
+        "7cb64ded-f39a-5615-b0a8-c3ee3cb0fa4c"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 1,
+      "draft_kinds": [
+        "decision"
+      ],
+      "episode_summary": "成员要求新增 pointfree API：添加 `bind_validated` 并从 `returns.pointfree` 导出，需匹配现有 pointfree bind helpers，并针对 `ValidatedLikeN` 进行类型标注。Agent 回应将添加绑定到 `ValidatedLikeN` 的专用泛型 `bind_validated` helper，沿用现有 point-fre",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x21-m193",
+      "episode_id": "2aa380fb-ec45-443f-b110-40a58c61d322",
+      "topic_ids": [
+        "7cb64ded-f39a-5615-b0a8-c3ee3cb0fa4c"
+      ],
+      "witness_topic_ids": [
+        "7cb64ded-f39a-5615-b0a8-c3ee3cb0fa4c"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 4,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求补齐 pointfree 接口：新增 `bind_validated` 辅助函数，委托给容器方法，并从 `returns.pointfree` 导出。Agent 报告该辅助函数已通过 `ValidatedBasedN.bind_validated` 委托、经 HKT 保留具体容器类型、已从 `returns.pointfree` 导出并纳入 pointfree 文档/API 参考，运行时委",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x32-m100",
+      "episode_id": "96dead8c-0dc9-4117-be65-ef8f8c7765ab",
+      "topic_ids": [
+        "5d003e64-0895-5311-8f3c-cf179454f011"
+      ],
+      "witness_topic_ids": [
+        "5d003e64-0895-5311-8f3c-cf179454f011"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 7,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求修改 `retryBackoff` 的公开 API 形状：改为 `retryBackoff?: 'linear' | 'exponential'`，默认 `'linear'`；linear 每次重试使用固定 `retryDelay`，exponential 每次尝试将基础延迟翻倍（`retryDelay`、`2x`、`4x`…）；重试周期内保持 prompt loading 状态。Agen",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x28-m130",
+      "episode_id": "3a20c0d7-2773-4436-a07f-fa1261ce5520",
+      "topic_ids": [
+        "7790eb8f-a6b1-51be-82d1-d1125102fb92"
+      ],
+      "witness_topic_ids": [
+        "7790eb8f-a6b1-51be-82d1-d1125102fb92"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 6,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求修正 XUnit 的 bailout 属性名，精确使用 `bailReason`、`testsBeforeBail`、`suppressedAfterBail`，并保留 bailout error 元素和 system-out 摘要。Agent 报告 XUnit 已精确序列化这三个 bailout 属性，保留 bailout error 元数据和 system-out 摘要，精确 XML ",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x26-m123",
+      "episode_id": "5b048668-bee0-4459-891e-8317e5fbe292",
+      "topic_ids": [
+        "8a698456-4045-520c-b7c7-1740963569fd"
+      ],
+      "witness_topic_ids": [
+        "8a698456-4045-520c-b7c7-1740963569fd"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 1,
+      "draft_kinds": [
+        "decision"
+      ],
+      "episode_summary": "成员要求为 `returns.methods.cond` 增加 `ValidatedLikeN` 支持：在 `container_type.empty` 回退分支之前加入其 dispatch 分支，使条件失败时使用 `from_failure(error_value)`。Agent 回应将扩展 `returns.methods.cond`，在空容器回退前加入 `ValidatedLikeN` di",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x23-m134",
+      "episode_id": "5bbde959-63b5-4319-95d5-1d12b0c72b23",
+      "topic_ids": [
+        "ed3d93f0-376b-5463-ac21-f7b74ca29281"
+      ],
+      "witness_topic_ids": [
+        "ed3d93f0-376b-5463-ac21-f7b74ca29281"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 5,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求更新 Mocha、Jasmine2、QUnit 三个浏览器适配器：每个发射点（包括 Mocha 的 deferred callbacks）在读取 `Testem.aborted` 前先检查 `typeof Testem`；一旦 abort，抑制正常事件并只发一次 `all-test-results`；QUnit 还要清空队列。Agent 报告三个适配器已加守卫、abort 后抑制事件并单次",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x27-m218",
+      "episode_id": "73b8af2f-e3ba-4186-a595-5a5b8e3bef2f",
+      "topic_ids": [
+        "42308f0a-5f20-5979-93c9-307b3b5aaefc"
+      ],
+      "witness_topic_ids": [
+        "42308f0a-5f20-5979-93c9-307b3b5aaefc"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 3,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision"
+      ],
+      "episode_summary": "成员要求慢文件按耗时降序排序、路径升序作为并列时的次序，从 shard 1 开始每个慢文件各占一个 shard，剩余文件只在未占用的 shard 上运行所选分片策略，慢文件所在 shard 保持隔离。Agent 说明会在所选分片策略之前应用慢文件隔离：阈值大于  时，已知耗时超过阈值的文件按耗时降序、路径升序排序并占用前导 shard，现有策略只对剩余 shard 使用重映射后的索引和数量；若慢文",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x19-m027",
+      "episode_id": "933d262d-0aca-417e-b9c2-32126f8b6a0b",
+      "topic_ids": [
+        "489bb0d1-ef65-501b-8d81-6e5bc3a583a3"
+      ],
+      "witness_topic_ids": [
+        "489bb0d1-ef65-501b-8d81-6e5bc3a583a3"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 7,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision"
+      ],
+      "episode_summary": "成员确认 checkpoint 生命周期可用，要求把安全操作接口从 Table.insert_all()/upsert_all() 的 safe=False 改为 Database 上的 safe_bulk_insert(..., strict=False, ...)、safe_bulk_upsert(..., pk, strict=False)、import_csv(table, source,",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x21-m223",
+      "episode_id": "2b698ea2-8ff1-4ccc-a296-f82d10d96eb3",
+      "topic_ids": [
+        "8a698456-4045-520c-b7c7-1740963569fd"
+      ],
+      "witness_topic_ids": [
+        "8a698456-4045-520c-b7c7-1740963569fd"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 5,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求更新 `returns/methods/cond.py`，使其识别 `ValidatedLikeN`，并在 `container_type.empty` 回退之前通过 `from_failure(error_value)` 分派失败，同时包含 typing overload/union。Agent 报告 `returns.methods.cond` 已新增专用 `ValidatedLike",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x22-m230",
+      "episode_id": "92ff944e-59d1-4d8b-9e3a-09fe778a3c4d",
+      "topic_ids": [
+        "42308f0a-5f20-5979-93c9-307b3b5aaefc"
+      ],
+      "witness_topic_ids": [
+        "42308f0a-5f20-5979-93c9-307b3b5aaefc"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 2,
+      "draft_kinds": [
+        "decision",
+        "decision"
+      ],
+      "episode_summary": "成员要求把 `isolateSlowThreshold` 接入按耗时分配分片的逻辑：`duration > threshold` 的文件视为慢文件，分片 1..N 各分到一个慢文件；当慢文件数量不少于分片数时，最后一个分片接收所有多余慢文件以及全部剩余文件。",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x32-m109",
+      "episode_id": "ca142cc1-ae13-4afa-9e72-801bcaed19e3",
+      "topic_ids": [
+        "8fc8a009-1950-565a-b22c-89286de6b56f"
+      ],
+      "witness_topic_ids": [
+        "8fc8a009-1950-565a-b22c-89286de6b56f"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 7,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求修正 `minSearchLength` 行为：空输入仍应发起请求；仅非空且短于 `minSearchLength` 的输入才抑制请求；该过短状态下中止/丢弃在途请求、清空 `filteredOptions`、置 `searchTooShort = true`，两个 wrapper 显示 `Type at least N characters`；`fallbackOptions` 不用于过",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x24-m182",
+      "episode_id": "9a6a0142-0766-4530-8049-6c5856f24d94",
+      "topic_ids": [
+        "489bb0d1-ef65-501b-8d81-6e5bc3a583a3"
+      ],
+      "witness_topic_ids": [
+        "489bb0d1-ef65-501b-8d81-6e5bc3a583a3"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 11,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求在 `Database` 上补齐 Python 安全批量接口：`safe_bulk_insert(..., strict=False, ...)` 与 `safe_bulk_upsert(..., pk, strict=False)`；`strict=False` 时提交成功返回 `{\"success\": True}`，回滚后返回 `{\"success\": False, \"checkpoi",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x33-m095",
+      "episode_id": "6df068b8-7b52-476b-a5aa-b1a1d651ecc7",
+      "topic_ids": [
+        "41c0061c-d586-5049-8cbf-b3e8c1be422c"
+      ],
+      "witness_topic_ids": [
+        "41c0061c-d586-5049-8cbf-b3e8c1be422c"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 3,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "timeline"
+      ],
+      "episode_summary": "成员要求放宽 `application/ndjson` / `application/x-ndjson` 的 BOM 处理：允许首个非空行开头出现 UTF-8 BOM，即使前面有空白行或仅空白行，例如 `\\n\\ufeff{\"ok\": true}` 应解析出对象；但后续非空行上的 BOM 仍视为错误。Agent 将 BOM 容忍实现为 NDJSON 分帧内的有状态处理，仅剥离首个非空记录的 BOM，",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x34-m132",
+      "episode_id": "9e5cbffe-a27a-452d-8523-3dadb46473b3",
+      "topic_ids": [
+        "728ccb74-ac5d-5aaa-ae1a-3c773948314f"
+      ],
+      "witness_topic_ids": [
+        "728ccb74-ac5d-5aaa-ae1a-3c773948314f"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 8,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求补齐错误面：暴露 `loadError`，静默忽略 `name` 为 `'AbortError'` 的错误，并把当前非中止失败转成字符串写入 `loadError`；两条路径都要清除 `loading`，中止不得设置 `loadError`。Agent 在核心状态与两个 styled prompt 中暴露 `loadError`，提交 `cd02d59`，并报告现有测试、构建、格式与类型检",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x31-m095",
+      "episode_id": "ce628997-7b8d-4982-acf8-abaa6433dee7",
+      "topic_ids": [
+        "41c0061c-d586-5049-8cbf-b3e8c1be422c"
+      ],
+      "witness_topic_ids": [
+        "41c0061c-d586-5049-8cbf-b3e8c1be422c"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 2,
+      "draft_kinds": [
+        "decision",
+        "timeline"
+      ],
+      "episode_summary": "成员要求修正 application/json 与 application/*+json 的 BOM 处理：解析应先跳过前导 JSON 空白，再接受一个可选的 UTF-8 BOM，然后才是 JSON 文本；当前仅在字节/字符零位去除 BOM，导致“空白+BOM+{}”报错，要求先修复该 BOM 位置问题。Agent 报告已实现该行为并提交为 7e6ea14，工作区干净，等待维护者评审。",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x28-m137",
+      "episode_id": "aebe712b-c847-40b9-88c2-49e4f3ae1c51",
+      "topic_ids": [
+        "46bea6a7-e948-539c-a5a1-395a90ce5bbf"
+      ],
+      "witness_topic_ids": [
+        "46bea6a7-e948-539c-a5a1-395a90ce5bbf"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 3,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "timeline"
+      ],
+      "episode_summary": "成员要求修正 TeamCity 的三个 `buildStatisticValue` 统计键，精确使用 `bailedTests`、`testsBeforeBail`、`suppressedAfterBail`，并保持 ERROR 消息和 `buildProblem` 不变。Agent 报告 TeamCity 已使用这三个统计键，ERROR 消息与 build problem 未改动，精确输出检查、",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x31-m114",
+      "episode_id": "45bfc3d5-3d26-498b-8c46-053b13e00112",
+      "topic_ids": [
+        "41c0061c-d586-5049-8cbf-b3e8c1be422c"
+      ],
+      "witness_topic_ids": [
+        "41c0061c-d586-5049-8cbf-b3e8c1be422c"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 3,
+      "draft_kinds": [
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求修正 application/ndjson 与 application/x-ndjson 的 BOM 处理：UTF-8 BOM 允许出现在第一个非空白行开头，即使前面有空白行或仅含空白的行；当前仅在字节/字符零位剥离 BOM，导致 b\"\\n\\xef\\xbb\\xbf{\\\"a\\\":1}\\n\" 报错，要求修复该 NDJSON 首个非空白行 BOM 情形。Agent 报告已实现该行为并提交为 55",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x19-m048",
+      "episode_id": "0d1f0938-c6d6-4cdb-8fef-c48e307e56fe",
+      "topic_ids": [
+        "8bc4bb72-daf0-5d4a-8ec2-477183429464"
+      ],
+      "witness_topic_ids": [
+        "8bc4bb72-daf0-5d4a-8ec2-477183429464"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 3,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision"
+      ],
+      "episode_summary": "成员要求 CLI 安全操作接口在 insert、upsert、bulk 上使用 --safe-mode 而非 --safe；bulk 不能保持不变，safe-mode bulk 必须支持 UPDATE，并采用与其它命令一致的仅在成功时提交的行为，要求先更新该部分。",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x24-m225",
+      "episode_id": "85d2c1b5-37b6-412d-bf66-49dc080f11fc",
+      "topic_ids": [
+        "8bc4bb72-daf0-5d4a-8ec2-477183429464"
+      ],
+      "witness_topic_ids": [
+        "8bc4bb72-daf0-5d4a-8ec2-477183429464"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 3,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "timeline"
+      ],
+      "episode_summary": "成员要求把 `insert`、`upsert`、`bulk` 三个命令的导入标志从 `--safe` 改为 `--safe-mode`，并同步更新 CLI 与 docs/reference 使用该确切名称。Agent 完成重命名：三个命令仅暴露 `--safe-mode`，`insert-files` 保留 `--safe`，帮助/注册断言与 （`155 passed`），含一次实际 `--saf",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x23-m146",
+      "episode_id": "2ee4aa3b-4abb-4252-a3b0-ab954e4a1f93",
+      "topic_ids": [
+        "4bf48b49-cc0e-5b82-8d2c-efa6203dfb19"
+      ],
+      "witness_topic_ids": [
+        "4bf48b49-cc0e-5b82-8d2c-efa6203dfb19"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 7,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求更新 TAP 和 Dot 两个 reporter：bailed run 先打印 `Bail out!` 及原因和计数，再输出 `# bailed`、`# ran before bail N`、`# suppressed N` 三行摘要；被抑制的 post-bail 结果要计数但不作为正常测试输出转发。Agent 报告已在 reporter 边界加入 bail 计数，TAP 和 Dot 在触",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x33-m103",
+      "episode_id": "acfa65bd-5639-4c95-876d-54921164a890",
+      "topic_ids": [
+        "41c0061c-d586-5049-8cbf-b3e8c1be422c"
+      ],
+      "witness_topic_ids": [
+        "41c0061c-d586-5049-8cbf-b3e8c1be422c"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 3,
+      "draft_kinds": [
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求对 `application/json` 和 `application/*+json` 的 BOM 处理再做一轮：解析时先跳过前导空白，再跳过至多一个 UTF-8 BOM，然后才解析 JSON 文本；`b\"\\xef\\xbb\\xbf{\\\"ok\\\": true}\"` 以及 BOM 前带空白的情况都应正常解析，顶层数组在决定是否逐个产出元素前也采用同样行为。Agent 报告已在标准 JSON 文",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x32-m122",
+      "episode_id": "af2f8296-21a7-43da-a577-f7809096e31a",
+      "topic_ids": [
+        "728ccb74-ac5d-5aaa-ae1a-3c773948314f"
+      ],
+      "witness_topic_ids": [
+        "728ccb74-ac5d-5aaa-ae1a-3c773948314f"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 7,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求补齐重试/错误状态接口：暴露 `loadError: string | undefined` 与 `retryCount: number`；非中止类失败在重试耗尽时将 `loadError` 设为字符串；重试期间 loading 保持 true 并更新 `retryCount`；新输入/提交/取消/关闭时随其余瞬态异步状态一并重置两者。Agent 报告新字段已编译并出现在构建后的 core",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x34-m150",
+      "episode_id": "c2155006-e0cf-4930-8acc-54bff0dc827e",
+      "topic_ids": [
+        "f2972f3f-6515-5826-bd1b-39516220f000"
+      ],
+      "witness_topic_ids": [
+        "f2972f3f-6515-5826-bd1b-39516220f000"
+      ],
+      "status": "assigned",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 6,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "timeline"
+      ],
+      "episode_summary": "成员要求新增缓存面：可选 `cacheResults`、以 `maxCacheSize` 为上限，并提供公开 `clearCache()`；按搜索字符串缓存；非 SWR 缓存命中应立即返回、不再调用 resolver，并使在途查询失效/中止，防止其结果覆盖缓存状态。Agent 报告提交 `947d4e8` 加入可选有界缓存与公开 `clearCache()` API，缓存命中立即返回且在途请求被中",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x23-m157",
+      "episode_id": "45cc347f-2459-4c30-9871-3ed9cdbae2b6",
+      "topic_ids": [
+        "46bea6a7-e948-539c-a5a1-395a90ce5bbf"
+      ],
+      "witness_topic_ids": [
+        "46bea6a7-e948-539c-a5a1-395a90ce5bbf"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 6,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求为 TeamCity reporter 补齐 bail 输出：bail 时发出 `Bail out!` ERROR 消息、`buildStatisticValue` 条目 `bailedTests`、`testsBeforeBail`、`suppressedAfterBail`，以及 `buildProblem`。Agent 报告 TeamCity 已在 bail 触发时输出转义后的 ER",
+      "staged_status": "moved",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x19-m134",
+      "episode_id": "9c204067-0f67-4c0a-83a7-b6805f614457",
+      "topic_ids": [
+        "af37ee43-607a-5e92-84a2-9e99526ddc01"
+      ],
+      "witness_topic_ids": [
+        "af37ee43-607a-5e92-84a2-9e99526ddc01"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 2,
+      "draft_kinds": [
+        "decision",
+        "decision"
+      ],
+      "episode_summary": "成员要求修正 `validate-import-invariants` 的 CLI 行为：即使校验失败也必须始终退出码 0，保留 JSON 表示通过/失败并列出失败的不变量 ID，去掉无效结果时的非零退出，并同步更新文档。",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x34-m177",
+      "episode_id": "19e5658f-8b22-4a95-9817-623069d292b0",
+      "topic_ids": [
+        "8fc8a009-1950-565a-b22c-89286de6b56f"
+      ],
+      "witness_topic_ids": [
+        "8fc8a009-1950-565a-b22c-89286de6b56f"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 4,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "timeline"
+      ],
+      "episode_summary": "成员要求新增 `minSearchLength`：非空且短于限制的输入要中止/作废在途请求、跳过 resolver、清空 `filteredOptions` 并置公开 `searchTooShort = true`；空输入必须始终发起请求；有效输入应重置该标志。Agent 报告提交 `80e7616` 在 core 与两个 wrapper 中加入 `minSearchLength` 和公开 `se",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x24-m241",
+      "episode_id": "edf6b78e-ccfe-46ee-b9b5-9a7049288db6",
+      "topic_ids": [],
+      "witness_topic_ids": [],
+      "status": "staged",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 3,
+      "draft_kinds": [
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求修正 `validate-import-invariants` 的退出行为：即使校验失败也必须始终退出 0，同时保留  ID，去掉不变量失败时的非零退出。Agent 完成修改：失败校验现在退出 0，保留机器可读的 false 结果与失败的不透明 ID，聚焦断言与全量测试通过（`1052 passed, 16 skipped`），格式、lint、类型、参考生成与空白检查均干净。",
+      "staged_status": "active",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x32-m133",
+      "episode_id": "7e0d2b1a-45fb-4b7a-bac1-1e44eed6c6e8",
+      "topic_ids": [
+        "f2972f3f-6515-5826-bd1b-39516220f000"
+      ],
+      "witness_topic_ids": [
+        "f2972f3f-6515-5826-bd1b-39516220f000"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 4,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求为 core autocomplete prompt 新增公开方法 `clearCache()`：在 `cacheResults` 启用时清除缓存的异步结果，缓存关闭时调用也无害。Agent 报告该方法已出现在构建后的声明中，启用与禁用缓存两种模式行为正确，清除后下一次重复查询会重新经过 resolver，并已提交为 `1c4a50e`，工作区干净。",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x28-m146",
+      "episode_id": "8808a591-4916-45c1-90a6-36128106fa82",
+      "topic_ids": [
+        "ed3d93f0-376b-5463-ac21-f7b74ca29281"
+      ],
+      "witness_topic_ids": [
+        "ed3d93f0-376b-5463-ac21-f7b74ca29281"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 4,
+      "draft_kinds": [
+        "decision",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求 Mocha、Jasmine2、QUnit 适配器在观察到 abort 时（包括 deferred callback 路径）恰好发出一次 `all-test-results`，并继续抑制 abort 后的事件。Agent 报告三个适配器已各发出一次该终止事件，Mocha deferred callback 与 QUnit 队列清理均通过，客户端仅放行该终止事件并抑制普通 post-abor",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x23-m169",
+      "episode_id": "bc93693a-1c4a-400a-810f-ae9d15684d8c",
+      "topic_ids": [
+        "7790eb8f-a6b1-51be-82d1-d1125102fb92"
+      ],
+      "witness_topic_ids": [
+        "7790eb8f-a6b1-51be-82d1-d1125102fb92"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 9,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline",
+        "timeline",
+        "timeline",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求补齐 XUnit reporter 的 bail 输出：bail 时新增 `<error>` 元素和 suite 的 `errors` 属性，新增 `bailReason`、`testsBeforeBail`、`suppressedAfterBail` 三个属性，并加入 `<system-out>` bail 摘要。Agent 报告 XUnit 已仅对 bailed suite 添加 `e",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x34-m203",
+      "episode_id": "00072af8-d426-44fb-8ef0-219f8cd40b11",
+      "topic_ids": [
+        "5d003e64-0895-5311-8f3c-cf179454f011"
+      ],
+      "witness_topic_ids": [
+        "5d003e64-0895-5311-8f3c-cf179454f011"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 7,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "decision",
+        "timeline"
+      ],
+      "episode_summary": "成员要求新增重试支持：配置项 `maxRetries`、`retryDelay`、`retryBackoff`（`'linear'` 默认或 `'exponential'`），以及公开 `retryCount`；重试期间保持 loading 为 true；linear 每次使用基础延迟，exponential 每次尝试翻倍；superseding 或关闭 prompt 要清除待执行的重试定时器。A",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x32-m141",
+      "episode_id": "df6fb62f-6283-46d8-b7da-8adb858c5381",
+      "topic_ids": [
+        "4daa7389-276f-52a2-8898-f466af9a962e"
+      ],
+      "witness_topic_ids": [
+        "4daa7389-276f-52a2-8898-f466af9a962e"
+      ],
+      "status": "assigned",
+      "outcome": "committed",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 4,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求修正 debounce 默认值：`debounceMs` 省略时异步请求仍应防抖，默认值在 100–300ms 区间，当前省略等同于 `0`/立即执行；显式 `debounceMs: 0` 由 Agent 决定。Agent 将省略默认定为 200ms，仅对实际返回 promise 的 resolver 生效，零参数同步 resolver 保持立即执行，显式 `debounceMs: 0` ",
+      "staged_status": null,
+      "staged_reason": null,
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x28-m164",
+      "episode_id": "57f6ab93-df5d-4f9b-afc4-d30e95614a77",
+      "topic_ids": [],
+      "witness_topic_ids": [],
+      "status": "staged",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 3,
+      "draft_kinds": [
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员指出 `resetBailState()` 只清各 sub-reporter 的 `bailReport`，计数器/结果仍含 reset 前活动，要求 reset 后 sub-reporter 的 finish 输出只反映 reset 后结果。Agent 报告所有内置 sub-reporter 已重置 per-run 计数器、缓冲、ID、计时与 bailout 元数据，跨 reporter r",
+      "staged_status": "active",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x28-m171",
+      "episode_id": "428b9e75-5a94-4d17-9bd9-b346d7568b02",
+      "topic_ids": [],
+      "witness_topic_ids": [],
+      "status": "staged",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 1,
+      "draft_kinds": [
+        "timeline"
+      ],
+      "episode_summary": "成员要求将包的主版本号提升，并在提交后确认最终版本。Agent 报告包已校验为 4.0.0，完整 lint 套件在该版本下通过，正在提交主版本号提升，并称下一条 review 消息将确认已提交的版本。",
+      "staged_status": "active",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x23-m200",
+      "episode_id": "5713c193-cd58-456e-989f-e1b31cab0605",
+      "topic_ids": [],
+      "witness_topic_ids": [],
+      "status": "staged",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 1,
+      "draft_kinds": [
+        "decision"
+      ],
+      "episode_summary": "成员要求把版本号从 `3.17.0` 升到 `4.0.0`（major bump），并要求确认最终版本。Agent 表示将更新仓库内所有版本出现处、校验包报告版本并提交，等待最终批准。",
+      "staged_status": "active",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x32-m163",
+      "episode_id": "cdcd0474-5d5a-43b8-b02d-c6c500e91e66",
+      "topic_ids": [],
+      "witness_topic_ids": [],
+      "status": "staged",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 5,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求修正 `loadingMinDuration` 的计时起点：应从实际 resolver fetch 开始计时，而非 loading 开始/防抖计时器调度时；例如 `debounceMs: 500` 与 `loadingMinDuration: 300` 时，快速 resolver 在调用后仍应保持 loading 300ms，不能因防抖已消耗 500ms 而变为零。成员要求将 fetch ",
+      "staged_status": "active",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    },
+    {
+      "turn_id": "fm-x34-m232",
+      "episode_id": "4df5a2e7-9e7d-42c7-8e8c-6b5a6466129a",
+      "topic_ids": [],
+      "witness_topic_ids": [],
+      "status": "staged",
+      "outcome": "staged",
+      "close_reason": "idle",
+      "extract_status": "drafted",
+      "draft_count": 5,
+      "draft_kinds": [
+        "decision",
+        "decision",
+        "decision",
+        "timeline",
+        "timeline"
+      ],
+      "episode_summary": "成员要求新增 `loadingMinDuration` 配置项，默认 `0`：从 fetch 开始计时，在时长未满前保持 loading 为 true 并推迟应用结果；新的 fetch 或关闭 prompt 必须取消待执行的最小时长定时器；两个 wrapper 都要透传该选项。Agent 报告实现已编译、现有测试通过，计时探针验证快速成功/失败、慢完成、重试各自窗口及 ，并提交 `aa6c330`",
+      "staged_status": "active",
+      "staged_reason": "NO_CONFIRMED_TOPIC",
+      "reason": null,
+      "warnings": []
+    }
+  ],
+  "topics": [
+    {
+      "topic_id": "4daa7389-276f-52a2-8898-f466af9a962e",
+      "name": "prompt 查询防抖配置",
+      "summary": "prompt 查询新增可配置防抖：省略 debounceMs 时对返回 promise 的 resolver 默认 200ms，显式 0 立即执行。",
+      "description": "新查询在调用 resolver 前取消上一个 debounce。debounceMs 省略时默认防抖 200ms，仅对实际返回 promise 的 resolver 生效；显式 debounceMs: 0 完全立即执行，绕过延迟；零参数同步 resolver 保持立即。公开声明在核心及两个 wrapper 中暴露 debounceMs。提交 893a253 增加 200ms 默认可配置 debounce，并透传至两个 styled wrapper，保留初始/静态立即行为并支持 debounceMs: 0。三条路径通过运行时与聚焦回归。debounce 默认值修正已提交为 1eabdb5，工作区干净。",
+      "entry_counts": {
+        "decisions": 3,
+        "experiences": 0,
+        "timeline": 4
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "11edb3f6-359a-54c5-b910-6e5dcd4e38b9",
+          "current": "fm-x34-m117",
+          "current_user_ids": [
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "e5bc921a-46f0-5cb9-908b-659e5ddd2dfb",
+          "current": "fm-x32-m141",
+          "current_user_ids": [
+            "fm-expanded-user-32"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "036f604f-df78-50a4-a8d8-8e8a78febf18",
+          "current": "fm-x32-m141",
+          "current_user_ids": [
+            "fm-expanded-user-32"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "5d003e64-0895-5311-8f3c-cf179454f011",
+      "name": "retryBackoff 退避模式 API",
+      "summary": "重试周期内保持 prompt 的 loading 状态。",
+      "description": "重试周期内保持 prompt 的 loading 状态。\n`retryBackoff` 改为 `retryBackoff?: 'linear' | 'exponential'`，不再使用数值乘数。\n`retryBackoff` 默认值为 `'linear'`。\nlinear 模式下每次重试使用固定的 `retryDelay`。\nexponential 模式下每次尝试将基础延迟翻倍（`retryDelay`、`2x`、`4x`…）。\n新增重试配置项 `maxRetries`、`retryDelay`、`retryBackoff`，以及公开 `retryCount`。\nsuperseding 或关闭 prompt 要清除待执行的重试定时器。\n`retryBackoff` 联合类型在两个包声明中构建通过，所有聚焦测试套件通过。\n重试 API 修正已提交为 `2980349`，工作区干净；两个声明",
+      "entry_counts": {
+        "decisions": 7,
+        "experiences": 0,
+        "timeline": 3
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "dab5d412-a7a9-5002-b8eb-0c9d6b9ba00e",
+          "current": "fm-x32-m100",
+          "current_user_ids": [
+            "fm-expanded-user-32",
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "d1cf49af-e081-5d52-a610-66f0f896d864",
+          "current": "fm-x32-m100",
+          "current_user_ids": [
+            "fm-expanded-user-32"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "82aa56f1-7d85-57ce-9b2c-dab9c543cbf7",
+          "current": "fm-x32-m100",
+          "current_user_ids": [
+            "fm-expanded-user-32",
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "0e15f4e3-f134-50f4-9c9c-3816837c70b7",
+          "current": "fm-x32-m100",
+          "current_user_ids": [
+            "fm-expanded-user-32",
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "2644baee-fab5-5d1a-8c7c-960cbff9b96f",
+          "current": "fm-x32-m100",
+          "current_user_ids": [
+            "fm-expanded-user-32",
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "d9fbea79-07ab-5c52-a3be-8b91e3483c6d",
+          "current": "fm-x34-m203",
+          "current_user_ids": [
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "8fe0e058-64fd-5706-9980-49c193eadd97",
+          "current": "fm-x34-m203",
+          "current_user_ids": [
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "7790eb8f-a6b1-51be-82d1-d1125102fb92",
+      "name": "XUnit bailout 属性序列化",
+      "summary": "XUnit 保留 bailout error 元素和 system-out 摘要。",
+      "description": "XUnit 保留 bailout error 元素和 system-out 摘要。\nXUnit 的 bailout 属性名精确使用 `bailReason`。\nXUnit 的 bailout 属性名精确使用 `suppressedAfterBail`。\nXUnit 的 bailout 属性名精确使用 `testsBeforeBail`。\nXUnit reporter 在 bail 时新增 `bailReason`、`testsBeforeBail`、`suppressedAfterBail` 三个属性。\nXUnit reporter 在 bail 时新增 `<error>` 元素和 suite 的 `errors` 属性。\n被抑制结果不出现在 testcases 中，但反映在元数据里。\nXUnit 追加 bailout `<error>` 元素。\nXUnit 在 `<system-out>",
+      "entry_counts": {
+        "decisions": 6,
+        "experiences": 0,
+        "timeline": 8
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "7de81189-20ec-5e61-bdbc-a7ef15b6e1a9",
+          "current": "fm-x28-m130",
+          "current_user_ids": [
+            "fm-expanded-user-23",
+            "fm-expanded-user-28"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "1c6433e8-21b9-5a6f-8b55-40707ae55c8f",
+          "current": "fm-x28-m130",
+          "current_user_ids": [
+            "fm-expanded-user-28"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "9f29e96a-79d3-5b9f-ac52-c30064e130d6",
+          "current": "fm-x28-m130",
+          "current_user_ids": [
+            "fm-expanded-user-28"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "8c9455ff-1615-5617-a177-8ec465168795",
+          "current": "fm-x28-m130",
+          "current_user_ids": [
+            "fm-expanded-user-28"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "5f02a700-a967-557b-b7e3-67f592f69a95",
+          "current": "fm-x23-m169",
+          "current_user_ids": [
+            "fm-expanded-user-23"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "8afdc71a-8c35-535b-a58d-b4b25b3c885e",
+          "current": "fm-x23-m169",
+          "current_user_ids": [
+            "fm-expanded-user-23"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "ed3d93f0-376b-5463-ac21-f7b74ca29281",
+      "name": "浏览器适配器 abort 守卫",
+      "summary": "Mocha、Jasmine2、QUnit 的每个发射点在读取 `Testem.aborted` 前都要检查 `typeof Testem`，包括 Mocha 的",
+      "description": "Mocha、Jasmine2、QUnit 的每个发射点在读取 `Testem.aborted` 前都要检查 `typeof Testem`，包括 Mocha 的 deferred callbacks。\nQUnit 在 abort 时还要清空其队列。\n一旦 abort，适配器抑制正常事件，并只发一次 `all-test-results`。\n现有 Mocha 适配器测试和三个适配器的直接 abort 模拟均通过。\n三个适配器已加守卫，`Testem` 缺失时安全，abort 后抑制正常事件并单次发完成信号；Mocha 在定时回调内复查，QUnit 在检测到 abort 时清空待处理队列。\n客户端已放行该额外终止事件，同时抑制 abort 后的普通流量。\n自定义竞态探针、现有 client/Mocha 套件和 lint 已通过。\n三个适配器已实现首次观察到 abort 时恰好发出一次 `all-",
+      "entry_counts": {
+        "decisions": 3,
+        "experiences": 0,
+        "timeline": 5
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "a0b7afaf-cb4d-5172-a395-f8b1a51905ff",
+          "current": "fm-x23-m134",
+          "current_user_ids": [
+            "fm-expanded-user-23"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "c8f96d90-14ef-54a2-b995-da95570454d4",
+          "current": "fm-x23-m134",
+          "current_user_ids": [
+            "fm-expanded-user-23"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "e985893e-2e44-5073-911e-4ed4fb61919e",
+          "current": "fm-x23-m134",
+          "current_user_ids": [
+            "fm-expanded-user-23",
+            "fm-expanded-user-28"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "f2972f3f-6515-5826-bd1b-39516220f000",
+      "name": "查询结果有界缓存",
+      "summary": "新增可选有界查询结果缓存与公开 clearCache()，命中立即返回并中止在途查询。",
+      "description": "提交 947d4e8 加入可选有界缓存与公开 clearCache() API：按搜索字符串缓存结果，以 maxCacheSize 为上限；非 SWR 缓存命中立即返回、不再调用 resolver，并中止在途查询使其结果不能覆盖缓存状态。缓存 API 新增已提交为 1c4a50e，工作区干净。clearCache() 已出现在构建后的声明中，启用与禁用缓存两种模式行为正确，清除后下一次重复查询重新经过 resolver。core autocomplete prompt 新增公开方法 clearCache()，在 cacheResults 启用时清除缓存的异步结果。",
+      "entry_counts": {
+        "decisions": 5,
+        "experiences": 0,
+        "timeline": 4
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "a695d589-32c1-5c6f-bf9f-f6e699c73c1a",
+          "current": "fm-x34-m150",
+          "current_user_ids": [
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "4942e270-5861-535f-8f18-3dd1ffcabc9c",
+          "current": "fm-x34-m150",
+          "current_user_ids": [
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [
+            "fm-x32-m133"
+          ],
+          "history": []
+        },
+        {
+          "decision_id": "bbd7df5a-5223-554f-8327-b0d4eac3ce50",
+          "current": "fm-x34-m150",
+          "current_user_ids": [
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "571ceae7-df9e-58b9-a526-37b23044b22e",
+          "current": "fm-x34-m150",
+          "current_user_ids": [
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "0e7ef2e2-053e-5719-a1c3-2324be1e5e61",
+          "current": "fm-x34-m150",
+          "current_user_ids": [
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "8fc8a009-1950-565a-b22c-89286de6b56f",
+      "name": "minSearchLength 行为修正",
+      "summary": "minSearchLength 修正已提交 f5941cf，工作区干净；空输入仍发起请求，过短非空输入抑制请求。",
+      "description": "提交 80e7616 在 core 与两个 wrapper 中加入 minSearchLength 和公开 searchTooShort，空字符串绕过缓存并始终请求。修正后行为：仅非空且短于 minSearchLength 的输入才抑制请求；过短状态下中止/丢弃在途请求、清空 filteredOptions、置 searchTooShort = true，两个 wrapper 显示 `Type at least N characters`；有效输入重置 searchTooShort；fallbackOptions 不用于过短场景，仅用于加载失败耗尽。修正已提交为 f5941cf，工作区干净。",
+      "entry_counts": {
+        "decisions": 6,
+        "experiences": 0,
+        "timeline": 3
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "5644c4ff-d03f-5b01-adbc-ab52bd85553e",
+          "current": "fm-x32-m109",
+          "current_user_ids": [
+            "fm-expanded-user-32"
+          ],
+          "conflicts": [
+            "fm-x34-m177"
+          ],
+          "history": []
+        },
+        {
+          "decision_id": "5bae82d1-6adc-567c-aa66-877f0ffaf8f6",
+          "current": "fm-x32-m109",
+          "current_user_ids": [
+            "fm-expanded-user-32"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "908022ee-cb41-5d88-9601-519b64374f4a",
+          "current": "fm-x32-m109",
+          "current_user_ids": [
+            "fm-expanded-user-32"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "dbdcd603-1385-54c3-9b5d-5225a63a53c4",
+          "current": "fm-x32-m109",
+          "current_user_ids": [
+            "fm-expanded-user-32"
+          ],
+          "conflicts": [
+            "fm-x34-m177"
+          ],
+          "history": []
+        },
+        {
+          "decision_id": "249f3488-b996-532b-a0df-ffafbd69213e",
+          "current": "fm-x32-m109",
+          "current_user_ids": [
+            "fm-expanded-user-32"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "f5cc8bbb-47af-57a7-b194-8cc6331bfaf5",
+          "current": "fm-x34-m177",
+          "current_user_ids": [
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "af37ee43-607a-5e92-84a2-9e99526ddc01",
+      "name": "表级导入不变量断言",
+      "summary": "提供 validate_import_invariants(table) -> {\"valid\": bool, \"failures\": [...]} 接口。",
+      "description": "提供 validate_import_invariants(table) -> {\"valid\": bool, \"failures\": [...]} 接口。\nSQL 不以 SELECT 开头时按表达式处理：非聚合表达式须对每一行成立。\n导入不变量采用表级 truthy 断言，不以“有行即失败”判断。\n提供 add_import_invariant(table, sql) -> invariant_id 接口。\nSQL 不以 SELECT 开头时按表达式处理：聚合表达式只求值一次。\n导入不变量持久化到 DB。\nSQL 以 SELECT 开头时，取第一行第一列作为 truthy/falsy。\n提供 remove_import_invariant(table, invariant_id) 接口。\n提供 list_import_invariants(table) -> [{\"id\", \"expre",
+      "entry_counts": {
+        "decisions": 12,
+        "experiences": 0,
+        "timeline": 3
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "37446190-c58c-55da-ac82-fdeba0a22700",
+          "current": "fm-x19-m017",
+          "current_user_ids": [
+            "fm-expanded-user-19"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "1e14fed0-cd12-59e4-9e75-c14c00e6d5ae",
+          "current": "fm-x19-m017",
+          "current_user_ids": [
+            "fm-expanded-user-19"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "00d68123-6a9c-50b7-b990-d73abd1f3a46",
+          "current": "fm-x19-m017",
+          "current_user_ids": [
+            "fm-expanded-user-19"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "3364d434-dafe-5a57-9544-636ced9a8ee4",
+          "current": "fm-x19-m017",
+          "current_user_ids": [
+            "fm-expanded-user-19",
+            "fm-expanded-user-24"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "98244652-55fd-5d3a-b75e-3b4bfadfcdab",
+          "current": "fm-x19-m017",
+          "current_user_ids": [
+            "fm-expanded-user-19"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "1851104d-b58a-56c3-8ce8-89965d61a0ea",
+          "current": "fm-x19-m017",
+          "current_user_ids": [
+            "fm-expanded-user-19"
+          ],
+          "conflicts": [
+            "fm-x24-m138"
+          ],
+          "history": []
+        },
+        {
+          "decision_id": "be01ee70-23f9-520b-b096-82963cb6478d",
+          "current": "fm-x19-m017",
+          "current_user_ids": [
+            "fm-expanded-user-19"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "16cf20a4-d9d0-55e9-863b-a5f1ff38d0ae",
+          "current": "fm-x19-m017",
+          "current_user_ids": [
+            "fm-expanded-user-19"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "69d50487-eadb-57f0-8705-204844849910",
+          "current": "fm-x19-m017",
+          "current_user_ids": [
+            "fm-expanded-user-19"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "bc3f4374-cbc0-56a0-910c-e2a08b7d5db4",
+          "current": "fm-x24-m138",
+          "current_user_ids": [
+            "fm-expanded-user-24"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "ff4f5c0b-880b-5d81-91b6-16ed2dc77c0f",
+          "current": "fm-x19-m134",
+          "current_user_ids": [
+            "fm-expanded-user-19"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "2a85cd52-ea4e-5506-b136-4166cfebc88c",
+          "current": "fm-x19-m134",
+          "current_user_ids": [
+            "fm-expanded-user-19"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "46bea6a7-e948-539c-a5a1-395a90ce5bbf",
+      "name": "TeamCity bail 输出与统计键",
+      "summary": "TeamCity 的 ERROR 消息和 `buildProblem` 保持原样不变。",
+      "description": "TeamCity 的 ERROR 消息和 `buildProblem` 保持原样不变。\nTeamCity 的三个 `buildStatisticValue` 统计键精确使用 `bailedTests`、`testsBeforeBail`、`suppressedAfterBail`。\nTeamCity 已改用要求的三个统计键，ERROR 消息和 build problem 未改动，精确输出检查、TeamCity 测试和 lint 通过。\nTeamCity 在 finish 时写入三项 build statistics。\nTeamCity 通过同一 reporter 面统计被抑制结果。\nfm-expanded-user-23 将结论从「TeamCity reporter 在 bail 时输出 `buildProblem`。」改为「TeamCity reporter 在 bail 时发出 `Ba",
+      "entry_counts": {
+        "decisions": 2,
+        "experiences": 0,
+        "timeline": 5
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "b90de36d-29bd-5342-b2e5-f5b6aa52d719",
+          "current": "fm-x28-m137",
+          "current_user_ids": [
+            "fm-expanded-user-28"
+          ],
+          "conflicts": [
+            "fm-x23-m157"
+          ],
+          "history": []
+        },
+        {
+          "decision_id": "3cc8be92-aab4-54c4-8337-97f97c272179",
+          "current": "fm-x28-m137",
+          "current_user_ids": [
+            "fm-expanded-user-23",
+            "fm-expanded-user-28"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "728ccb74-ac5d-5aaa-ae1a-3c773948314f",
+      "name": "loadError 与 retryCount 状态",
+      "summary": "暴露 loadError 公开状态，抑制 AbortError，失败与中止均清除 loading，重试递增 retryCount 且保持 loading。",
+      "description": "提交 cd02d59 暴露 loadError、静默忽略 name 为 'AbortError' 的错误、在当前非中止失败与 prompt 中止时清除 loading，并覆盖两个 styled autocomplete 变体；非中止失败转字符串写入 loadError，中止不设置 loadError。新输入/提交/取消/关闭时 loadError 与 retryCount 随其余瞬态异步状态一并重置。重试时更新 retryCount 且 loading 保持 true。重试/错误状态接口已提交为 e21417d，工作区干净。现有测试套件、构建、格式化和类型检查通过，新增公共字段已编译并出现在构建后的 core API 中。生命周期校验通过：retryCount 在每次重试前递增且 loading 保持活跃，终态失败填充 loadError，中止失败不填充，新输入/终结/关闭重置两者。",
+      "entry_counts": {
+        "decisions": 7,
+        "experiences": 0,
+        "timeline": 6
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "934e5179-c959-5aff-8767-5a03148118e8",
+          "current": "fm-x34-m132",
+          "current_user_ids": [
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "a7d71d88-1b8d-5da1-bc59-2d610d6c1209",
+          "current": "fm-x34-m132",
+          "current_user_ids": [
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "58a63335-f35a-5f96-baef-0c54eee2c123",
+          "current": "fm-x34-m132",
+          "current_user_ids": [
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [
+            "fm-x32-m122"
+          ],
+          "history": []
+        },
+        {
+          "decision_id": "29a71b88-9f87-592b-89fb-cb4f443ebc18",
+          "current": "fm-x34-m132",
+          "current_user_ids": [
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [
+            "fm-x32-m122"
+          ],
+          "history": []
+        },
+        {
+          "decision_id": "932ceaf4-4eba-5b6a-9a4e-5622c5c9136f",
+          "current": "fm-x34-m132",
+          "current_user_ids": [
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "e7a2ed76-4133-583d-a0aa-5ddfcd4336f3",
+          "current": "fm-x32-m122",
+          "current_user_ids": [
+            "fm-expanded-user-32"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "3ac62bdf-e27a-5306-9845-546300ccdd83",
+          "current": "fm-x32-m122",
+          "current_user_ids": [
+            "fm-expanded-user-32"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "41c0061c-d586-5049-8cbf-b3e8c1be422c",
+      "name": "JSON 多模式解析",
+      "summary": "JSON seq 的媒体类型支持 `application/json-seq`。",
+      "description": "JSON seq 的媒体类型支持 `application/json-seq`。\n支持 NDJSON 和 JSON seq 两种流式格式。\n`+json` 后缀仅支持 `application/*+json`，不需要其他别名。\n对 application/json 与 application/*+json，若顶层 JSON 值为数组，iter_json()/aiter_json() 应逐个产出数组元素，而不是把数组对象作为单\nNDJSON 的媒体类型支持 `application/ndjson` 和 `application/x-ndjson`。\n内容类型不属于 JSON 系列时抛出 `httpx.DecodingError`，不回退到缺失或随机内容类型。\nJSON-seq 按 RS 分割并处理通常的尾部 LF。\nNDJSON 空行忽略。\n畸形或截断载荷包装为 `httpx.Decodin",
+      "entry_counts": {
+        "decisions": 13,
+        "experiences": 0,
+        "timeline": 10
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "580ae53e-c3ae-57b3-a13b-f52d243dc23f",
+          "current": "fm-x33-m013",
+          "current_user_ids": [
+            "fm-expanded-user-33"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "148b7ed8-0b82-5759-9897-9014d7dd17b0",
+          "current": "fm-x33-m013",
+          "current_user_ids": [
+            "fm-expanded-user-33"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "a0b0ba10-bb31-5d1b-b640-f8477e03e914",
+          "current": "fm-x33-m013",
+          "current_user_ids": [
+            "fm-expanded-user-33"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "1cf803f6-0636-59d9-b5ab-865ec63e26e9",
+          "current": "fm-x31-m059",
+          "current_user_ids": [
+            "fm-expanded-user-31"
+          ],
+          "conflicts": [],
+          "history": [
+            "fm-x33-m013"
+          ]
+        },
+        {
+          "decision_id": "a8e61377-8972-5d40-ab37-b7a67f18d109",
+          "current": "fm-x33-m013",
+          "current_user_ids": [
+            "fm-expanded-user-33"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "74571d24-7cbf-5e1e-a07d-16e4a0d64eba",
+          "current": "fm-x33-m016",
+          "current_user_ids": [
+            "fm-expanded-user-33"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "3566da95-7451-5137-9250-f13de7f4abc5",
+          "current": "fm-x33-m016",
+          "current_user_ids": [
+            "fm-expanded-user-33"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "69b94088-6886-5919-a0c6-85bf619d7ecb",
+          "current": "fm-x33-m016",
+          "current_user_ids": [
+            "fm-expanded-user-33"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "8a7c8faf-36ae-5cca-ae4f-b36b11f7c8bc",
+          "current": "fm-x33-m016",
+          "current_user_ids": [
+            "fm-expanded-user-33"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "e5df7667-b765-5b60-b3e8-368c2afadf3a",
+          "current": "fm-x33-m016",
+          "current_user_ids": [
+            "fm-expanded-user-33"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "31099ee7-5b08-50d2-bafe-bc6394aafabf",
+          "current": "fm-x33-m095",
+          "current_user_ids": [
+            "fm-expanded-user-33"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "4355866d-6e38-5cf2-8f57-ca2bfa83ba82",
+          "current": "fm-x33-m095",
+          "current_user_ids": [
+            "fm-expanded-user-31",
+            "fm-expanded-user-33"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "cc7ce0a9-ad1e-5307-bb7c-bdaab18752eb",
+          "current": "fm-x31-m095",
+          "current_user_ids": [
+            "fm-expanded-user-31",
+            "fm-expanded-user-33"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "4bf48b49-cc0e-5b82-8d2c-efa6203dfb19",
+      "name": "TAP/Dot bailout 摘要标签",
+      "summary": "TAP 和 Dot 都应输出 `Bail out!` 并带原因和计数。",
+      "description": "TAP 和 Dot 都应输出 `Bail out!` 并带原因和计数。\n被抑制的 post-bail 结果要计数，但不作为正常测试输出转发。\nper-run reset 已清空 wrapper 和 human-reporter 的 bail 计数器。\n集中式 reporter 已将每个 post-bail report 计为 suppressed，同时不转发到正常输出。\nTAP 和 Dot 已在触发结果后立即打印 bailout，并追加三行摘要。\n63 个 reporter 测试及 TAP/Dot 直接 bail-output 检查通过。\nfm-expanded-user-23 将结论从「TAP 和 Dot 在 bailout 后输出摘要行 `# bailed`、`# ran before bail N`、`# suppressed N`。」改为「TAP 和 Dot 都应输出 `Bail ",
+      "entry_counts": {
+        "decisions": 2,
+        "experiences": 0,
+        "timeline": 6
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "7e783157-f17e-5672-8b55-dbf4fad2d8a8",
+          "current": "fm-x28-m123",
+          "current_user_ids": [
+            "fm-expanded-user-23",
+            "fm-expanded-user-28"
+          ],
+          "conflicts": [],
+          "history": [
+            "fm-x23-m146"
+          ]
+        },
+        {
+          "decision_id": "124e43f7-188e-5091-8684-3e12bd977721",
+          "current": "fm-x23-m146",
+          "current_user_ids": [
+            "fm-expanded-user-23"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "8bc4bb72-daf0-5d4a-8ec2-477183429464",
+      "name": "CLI --safe-mode 标志重命名",
+      "summary": "insert、upsert、bulk 现只暴露 --safe-mode；insert-files 按范围保留 --safe。",
+      "description": "CLI 的 insert、upsert、bulk 三个命令现在只暴露 --safe-mode 选项，不再使用 --safe；insert-files 保留原有 --safe 标志，因为成员要求的范围只点名了另外三个命令。safe-mode 下的 bulk 采用与其它命令一致的仅在成功时提交（commit-only-on-success）行为，并且必须支持 UPDATE。fm-expanded-user-24 已将结论从「CLI 的 insert、upsert、bulk 命令使用 --safe-mode 选项，不使用 --safe。」改为「`insert-files` 保留原有 `--safe` 标志，因为成员要求的范围只点名了另外三个命令。」",
+      "entry_counts": {
+        "decisions": 3,
+        "experiences": 0,
+        "timeline": 2
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "f9d9169d-cd27-5d1c-929c-bc7b819bee6e",
+          "current": "fm-x19-m048",
+          "current_user_ids": [
+            "fm-expanded-user-19"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "75cf43b8-b6e6-5326-8a32-4f8b14718b4d",
+          "current": "fm-x19-m048",
+          "current_user_ids": [
+            "fm-expanded-user-19"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "fad7c958-d871-503c-94d2-46dd59de0e46",
+          "current": "fm-x24-m225",
+          "current_user_ids": [
+            "fm-expanded-user-24"
+          ],
+          "conflicts": [],
+          "history": [
+            "fm-x19-m048"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "489bb0d1-ef65-501b-8d81-6e5bc3a583a3",
+      "name": "Database 安全批量接口",
+      "summary": "不在 Table.insert_all() / upsert_all() 上加 safe=False，安全操作接口改由 Database 提供。",
+      "description": "不在 Table.insert_all() / upsert_all() 上加 safe=False，安全操作接口改由 Database 提供。\n新增 Database.import_csv(table, source, safe_mode=False, strict=False)。\n新增 Database.safe_bulk_upsert(..., pk, strict=False)。\n新增 Database.import_json(table, data, safe_mode=False, strict=False)。\nstrict=False 时返回 {\"success\": true} 或包含 success: false、checkpoint_id、failures、error_report 的失败字典。\nstrict 模式下回滚并抛出异常。\n新增 Database.safe_bu",
+      "entry_counts": {
+        "decisions": 8,
+        "experiences": 0,
+        "timeline": 6
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "67e81237-2316-564b-89a8-103a39424145",
+          "current": "fm-x19-m027",
+          "current_user_ids": [
+            "fm-expanded-user-19"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "1d49c7b8-56d3-5450-8998-a5f943c7cd2c",
+          "current": "fm-x19-m027",
+          "current_user_ids": [
+            "fm-expanded-user-19"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "fda45ef2-4a5d-5acf-9b03-b576efbb723f",
+          "current": "fm-x19-m027",
+          "current_user_ids": [
+            "fm-expanded-user-19",
+            "fm-expanded-user-24"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "8580bd10-690a-5901-a6e8-4a0c5bd51a0a",
+          "current": "fm-x19-m027",
+          "current_user_ids": [
+            "fm-expanded-user-19"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "962bcd22-a92d-59af-bad4-2aa1c2f8d8db",
+          "current": "fm-x19-m027",
+          "current_user_ids": [
+            "fm-expanded-user-19"
+          ],
+          "conflicts": [
+            "fm-x24-m182"
+          ],
+          "history": []
+        },
+        {
+          "decision_id": "10555f02-387a-5190-a7fb-e8858c40b5de",
+          "current": "fm-x19-m027",
+          "current_user_ids": [
+            "fm-expanded-user-19",
+            "fm-expanded-user-24"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "63fa7d3c-9abd-5a44-900c-ca2c3089de2d",
+          "current": "fm-x19-m027",
+          "current_user_ids": [
+            "fm-expanded-user-19",
+            "fm-expanded-user-24"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "00333902-73cb-5dcd-8fc1-67352b4a289a",
+          "current": "fm-x24-m182",
+          "current_user_ids": [
+            "fm-expanded-user-24"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "42308f0a-5f20-5979-93c9-307b3b5aaefc",
+      "name": "慢文件隔离分片排序",
+      "summary": "慢文件按耗时降序、同耗时按规范化路径升序排序，从 shard 1 起各占一个 shard 隔离；剩余文件仅在未占用 shard 上运行所选分片策略。",
+      "description": "慢文件隔离分片排序规则：慢文件按耗时降序排序，耗时相同时按规范化路径升序排序；慢文件从 shard 1 开始每个各占一个 shard，其所在 shard 保持隔离，剩余文件只在未占用的 shard 上运行所选分片策略。当慢文件数量至少等于分片数时，最后一个分片接收所有多余慢文件加全部剩余文件。`isolateSlowThreshold` 已接入 duration-aware sharding：`duration > threshold` 的文件为慢文件，分片 1..N 各分一个慢文件。",
+      "entry_counts": {
+        "decisions": 5,
+        "experiences": 0,
+        "timeline": 0
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "b1c1e85e-e3f3-5282-b110-344c80fd02bb",
+          "current": "fm-x27-m218",
+          "current_user_ids": [
+            "fm-expanded-user-27"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "8811708f-a03a-53bd-9ee6-465b45538cc0",
+          "current": "fm-x27-m218",
+          "current_user_ids": [
+            "fm-expanded-user-27"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "5ab57eff-f486-5f5a-a03e-940cccef67e1",
+          "current": "fm-x27-m218",
+          "current_user_ids": [
+            "fm-expanded-user-27"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "c4aa65f4-a18d-56d0-8f94-f885efc48254",
+          "current": "fm-x22-m230",
+          "current_user_ids": [
+            "fm-expanded-user-22"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "3a94c9f8-8df3-52ea-877c-fc69bced4916",
+          "current": "fm-x22-m230",
+          "current_user_ids": [
+            "fm-expanded-user-22"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "8a698456-4045-520c-b7c7-1740963569fd",
+      "name": "cond 支持 ValidatedLikeN",
+      "summary": "`returns.methods.cond` 增加 `ValidatedLikeN` 的 dispatch 分支，位置在 `container_type.emp",
+      "description": "`returns.methods.cond` 增加 `ValidatedLikeN` 的 dispatch 分支，位置在 `container_type.empty` 回退之前，条件失败时使用 `fr\nfm-expanded-user-21 将结论从「`cond` 的 typing overload/union 需包含 `ValidatedLikeN`。」改为「`returns/methods/cond.py` 需识别 `ValidatedLikeN`，失败通过 `from_failure(error_value)` 分派，且该分派在 `container_」\n运行时分派、methods 测试、cond mypy fixture、全量源码 mypy、lint/format、slots、doctests 与 Sphinx 均通过，该修订已提交。\n失败条件已在单失败 `.empty` 回退前经",
+      "entry_counts": {
+        "decisions": 1,
+        "experiences": 0,
+        "timeline": 4
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "78ea249e-aee2-5617-9151-836610e23803",
+          "current": "fm-x26-m123",
+          "current_user_ids": [
+            "fm-expanded-user-26"
+          ],
+          "conflicts": [
+            "fm-x21-m223"
+          ],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "7cb64ded-f39a-5615-b0a8-c3ee3cb0fa4c",
+      "name": "pointfree bind_validated 辅助",
+      "summary": "新增 `bind_validated` pointfree 辅助函数，委托给容器方法 `ValidatedBasedN.bind_validated`。",
+      "description": "新增 `bind_validated` pointfree 辅助函数，委托给容器方法 `ValidatedBasedN.bind_validated`。\n运行时委托/短路、全量 mypy、typing fixture、lint/format、slots、模块 doctest 与 Sphinx 均通过，并已提交。\npointfree 辅助函数已实现：通过 `ValidatedBasedN.bind_validated` 委托，经 HKT 保留具体容器类型，并从 `returns.pointfree` 导出，纳入\nfm-expanded-user-21 将结论从「新增 `bind_validated`，并从 `returns.pointfree` 导出，匹配现有 pointfree bind helpers，针对 `ValidatedLikeN` 进行类型标注」改为「新增 `bind_vali",
+      "entry_counts": {
+        "decisions": 1,
+        "experiences": 0,
+        "timeline": 3
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "04ba11d1-8d1e-55b0-98ee-3be9181f6992",
+          "current": "fm-x21-m193",
+          "current_user_ids": [
+            "fm-expanded-user-21"
+          ],
+          "conflicts": [],
+          "history": [
+            "fm-x26-m112"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "695761ac-3e36-56c9-b35d-2653d3a74200",
+      "name": "文件耗时历史写入",
+      "summary": "`durationHistoryMaxRuns` 为 `maxRuns === 1` 时，history 条目写 `{ duration, recordedAt",
+      "description": "`durationHistoryMaxRuns` 为 `maxRuns === 1` 时，history 条目写 `{ duration, recordedAt }`。\n按 `durationHistoryMaxRuns` 为每个文件保留最近 N 次观测。\n接入 `sequence.recordFileDurations`，默认 `false`。\n在全部测试结束后的 final cleanup 中，把取整的整数毫秒耗时写入历史文件。\n写入历史文件时创建父目录。\n端到端运行在 finalization 阶段创建嵌套 history 路径，并按要求的多观测形状记录取整的文件时长。\n包构建、聚焦回归测试、lint 和 typecheck 均通过。\nfm-expanded-user-27 将结论从「`recordFileDurations` 接入 `core.ts` 的最终清理阶段，写入取整的整数",
+      "entry_counts": {
+        "decisions": 5,
+        "experiences": 0,
+        "timeline": 6
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "795da291-041d-56a3-bd8d-0498317dc7b5",
+          "current": "fm-x22-m181",
+          "current_user_ids": [
+            "fm-expanded-user-22",
+            "fm-expanded-user-27"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "e2d7c73d-b862-5245-836a-71524ece60c8",
+          "current": "fm-x27-m175",
+          "current_user_ids": [
+            "fm-expanded-user-27"
+          ],
+          "conflicts": [],
+          "history": [
+            "fm-x22-m181"
+          ]
+        },
+        {
+          "decision_id": "dd3cf143-07c1-5e5c-874e-0fb0b0c74741",
+          "current": "fm-x27-m175",
+          "current_user_ids": [
+            "fm-expanded-user-27"
+          ],
+          "conflicts": [],
+          "history": [
+            "fm-x22-m181"
+          ]
+        },
+        {
+          "decision_id": "4c3a4185-a594-55bb-b8a2-4308bd6c708d",
+          "current": "fm-x27-m175",
+          "current_user_ids": [
+            "fm-expanded-user-27"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "006505b5-7625-5c97-807e-763998262a46",
+          "current": "fm-x27-m175",
+          "current_user_ids": [
+            "fm-expanded-user-27"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "376efaad-a0ac-506b-9340-a2e0722b0e72",
+      "name": "bail 状态显式重置入口",
+      "summary": "顶层运行开始时改用显式重置路径，不再由 Reporter.onStart() 从 launcher 数据推断重置。",
+      "description": "每个顶层运行开始时使用显式重置路径，而不是让 Reporter.onStart() 从 launcher 数据推断重置。暴露 App.resetBailState()，用于重置 reporter 的 bail 状态、清除 App 的 abort 跟踪，并调用 Server.resetAbort()。显式重置路径已在每次真实运行前清除 reporter 状态、App 的 abort flag/promise/active set 及 server 的 abort latch。server abort latch 使 stop 广播在单次运行内幂等，并在重置后可复用。ESLint 以及 App、Server、Reporter 套件和直接重置面检查均通过。",
+      "entry_counts": {
+        "decisions": 2,
+        "experiences": 0,
+        "timeline": 3
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "059ee4df-52d0-58ba-b763-e330bb6e1f99",
+          "current": "fm-x23-m096",
+          "current_user_ids": [
+            "fm-expanded-user-23"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "ff23134d-9ae7-5956-ae22-a0717a255d0d",
+          "current": "fm-x23-m096",
+          "current_user_ids": [
+            "fm-expanded-user-23"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "00ff7a1d-46f3-572d-b000-f5ce2f49e67e",
+      "name": "显式托管检查点 API",
+      "summary": "禁用状态下创建检查点应抛出 `SafeImportNotEnabledError`。",
+      "description": "禁用状态下创建检查点应抛出 `SafeImportNotEnabledError`。\n已 finalize 的 ID 再次 commit/rollback 应抛出 `CheckpointNotActiveError`。\n提供显式托管检查点接口：`enable_safe_import()` / `disable_safe_import()`、`create_import_checkpoint() -> checkpoi\n保持嵌套检查点可用。\n未知或已清理的 ID 应抛出 `CheckpointNotFoundError`。\n显式生命周期已实现：禁用创建抛 enablement 错误；commit/rollback 终结 ID；cleanup 移除 ID；嵌套内外检查点正确终结；原 `checkpoint()` 助手改为委\n聚焦的 import/transform/count 测试套件通过（`",
+      "entry_counts": {
+        "decisions": 5,
+        "experiences": 0,
+        "timeline": 2
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "10eb8cb0-b2d1-546f-af58-b0ce95d0e182",
+          "current": "fm-x24-m119",
+          "current_user_ids": [
+            "fm-expanded-user-19",
+            "fm-expanded-user-24"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "45486f76-8ac2-5994-b52f-c3bcaddd53bf",
+          "current": "fm-x24-m119",
+          "current_user_ids": [
+            "fm-expanded-user-19",
+            "fm-expanded-user-24"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "cb7f712e-1f0b-558b-997e-9fa4280c9c67",
+          "current": "fm-x24-m119",
+          "current_user_ids": [
+            "fm-expanded-user-24"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "b9d352f8-0bde-5ac5-9642-79c9d41537f0",
+          "current": "fm-x24-m119",
+          "current_user_ids": [
+            "fm-expanded-user-19",
+            "fm-expanded-user-24"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "c88ddd0c-0217-50dc-a8b9-e8e3789830c9",
+          "current": "fm-x24-m119",
+          "current_user_ids": [
+            "fm-expanded-user-19",
+            "fm-expanded-user-24"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "f2eb9f61-0282-5d53-95ee-8e230248319f",
+      "name": "异步结果 thenable 检测",
+      "summary": "异步结果改用单次 resolver 返回值的 thenable 检测，替换 instanceof Promise。",
+      "description": "检测异步结果时只调用 resolver 一次，以返回值的 `result?.then` 是否为函数判断 thenable，不再使用 `result instanceof Promise`；该次调用必须仍是首次 fetch，不得为检测重复调用 resolver。零参数同步回调仍正常工作。resolver 接收 `search` 和 `{ signal }`，即 `options(search, { signal })`，便于异步 provider 干净取消。提交 `99eb4e2` 完成替换。聚焦测试、类型检查、构建和单次调用跨 realm Promise 探针均通过。",
+      "entry_counts": {
+        "decisions": 4,
+        "experiences": 0,
+        "timeline": 2
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "10b514af-5fac-5b7e-bb98-6316f7557dde",
+          "current": "fm-x34-m107",
+          "current_user_ids": [
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [
+            "fm-x32-m012"
+          ],
+          "history": []
+        },
+        {
+          "decision_id": "e90be09c-1f4e-5069-a932-3b8dcac579d3",
+          "current": "fm-x34-m107",
+          "current_user_ids": [
+            "fm-expanded-user-34"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "c03c823c-d59e-5459-ab17-7f7027d49122",
+          "current": "fm-x32-m012",
+          "current_user_ids": [
+            "fm-expanded-user-32"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "1990cb26-e5c1-55cc-83d3-b8e8ac1a8b1a",
+          "current": "fm-x32-m012",
+          "current_user_ids": [
+            "fm-expanded-user-32"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "e7e60f86-0a42-5fc0-87f7-b69e138150ca",
+      "name": "EuroGrid 部门人力成本估算",
+      "summary": "EuroGrid 五部门 6,500 人，按七层薪资与部门管理幅度估算总人力成本。",
+      "description": "基于 benchmark 的七个 salary layers 和部门 specific spans of control，对 EuroGrid 五个部门、合计 6,500 名员工估算 headcount 总成本。已给出 Grid Operations & Control Center $30,370,000、Field Maintenance & Construction 等部门数值，材料中其余部门金额被截断，未完整列出。",
+      "entry_counts": {
+        "decisions": 0,
+        "experiences": 0,
+        "timeline": 3
+      },
+      "embedded": true,
+      "decisions": []
+    },
+    {
+      "topic_id": "ec9436e1-5e61-5ab9-9a77-24591dcfd9e1",
+      "name": "时长历史缺失回退分片",
+      "summary": "当 project 的 duration history 缺失或损坏且策略为 `'equal-split'` 时，按 path 排序，并在 `(i % coun",
+      "description": "当 project 的 duration history 缺失或损坏且策略为 `'equal-split'` 时，按 path 排序，并在 `(i % count) + 1 === shardInde\n当 project 的 duration history 缺失或损坏时，按 `durationFallbackStrategy` 处理：`'hash'` 复用现有 hash sharding。\n`sequence.durationFallbackStrategy` 需在启动时校验，并序列化到 workers。\n新增配置项 `sequence.durationFallbackStrategy`，取值为 `'hash'` 或 `'equal-split'`，默认 `'hash'`。",
+      "entry_counts": {
+        "decisions": 4,
+        "experiences": 0,
+        "timeline": 0
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "fa4c6c85-ac95-5abe-9be7-5c7376d3dfa9",
+          "current": "fm-x22-m174",
+          "current_user_ids": [
+            "fm-expanded-user-22"
+          ],
+          "conflicts": [
+            "fm-x27-m144"
+          ],
+          "history": []
+        },
+        {
+          "decision_id": "99f02888-14ac-5542-8f1b-274f9aeaaaa3",
+          "current": "fm-x22-m174",
+          "current_user_ids": [
+            "fm-expanded-user-22"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "d7682f69-12e4-5db1-b843-5325447e5482",
+          "current": "fm-x27-m144",
+          "current_user_ids": [
+            "fm-expanded-user-27"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "7cc06a92-ecd6-5731-a82e-d73a41f2ac7b",
+          "current": "fm-x27-m144",
+          "current_user_ids": [
+            "fm-expanded-user-27"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "28f3eadf-49cf-5917-9841-3a48072342df",
+      "name": "内容清单优先级推荐",
+      "summary": "已完成并向 [email protected] 发送优先级建议，优先级顺序为 Onboarding 0、Advocacy 1、Retention 2、Decis",
+      "description": "已完成并向 [email protected] 发送优先级建议，优先级顺序为 Onboarding 0、Advocacy 1、Retention 2、Decision 3、Consideration \nAgent 已将内容优先级分析报告发送至 [email protected]，消息 ID 为 a3aa7bd6ee404ad0。",
+      "entry_counts": {
+        "decisions": 0,
+        "experiences": 0,
+        "timeline": 2
+      },
+      "embedded": true,
+      "decisions": []
+    },
+    {
+      "topic_id": "bacfdd3b-66e8-5594-a833-b2c0dd46c4ce",
+      "name": "续约平均席位变化计算",
+      "summary": "计算 Brightpath 客户每次有席位变化的续约的平均席位变化时，将 v4.2 pricing 的生效起始年份改为 2023。",
+      "description": "计算 Brightpath 客户每次有席位变化的续约的平均席位变化时，将 v4.2 pricing 的生效起始年份改为 2023。\n计算席位变化时使用 monthly price per user 进行换算。\n结果按 'Average ARR-equivalent seat change: X.XX seat equivalents' 格式输出，保留到 0.01。\n已定位权威文件 Brightpath_Renewal_Churn_v1.0.xlsx 与 Brightpath_Historical_Pricing_Versions_ChangeLog.xlsx。\n修正后的 pricing 时间线已映射全部 293 条席位变化续约。\n已输出结果：Average ARR-equivalent seat change: -19.02 seat equivalents。\nAgent 将 v4.2 定",
+      "entry_counts": {
+        "decisions": 3,
+        "experiences": 0,
+        "timeline": 4
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "3b730964-f625-57c9-9812-b4a5ff91358b",
+          "current": "fm-x07-m001",
+          "current_user_ids": [
+            "fm-expanded-user-03",
+            "fm-expanded-user-07"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "ae0f44c0-b5dc-5330-9591-8e06828793fa",
+          "current": "fm-x07-m001",
+          "current_user_ids": [
+            "fm-expanded-user-03",
+            "fm-expanded-user-07"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "3dbb3597-e98c-512e-a12a-f2cae3b3e3ee",
+          "current": "fm-x07-m001",
+          "current_user_ids": [
+            "fm-expanded-user-03",
+            "fm-expanded-user-07"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "ab84c341-9953-511c-9ddb-ddd4326ac67a",
+      "name": "可再生能源管道覆盖率",
+      "summary": "使用历史平均总负荷数据作为未来年度需求的估计。",
+      "description": "使用历史平均总负荷数据作为未来年度需求的估计。\n最终覆盖率百分比四舍五入到0.01%。\n可再生能源管道按95%计入覆盖率计算。\nAgent 报告了按95%可再生能源管道计算的2027年和2028年德国、荷兰覆盖率结果。\nAgent 报告德国和荷兰可再生能源管线合计在 2027 年覆盖约 1.61%、2028 年约 2.02% 的年度总负荷。",
+      "entry_counts": {
+        "decisions": 3,
+        "experiences": 0,
+        "timeline": 2
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "b0e1854c-f5f7-5fdb-9f0c-f4e1e1fbb6a6",
+          "current": "fm-x14-m001",
+          "current_user_ids": [
+            "fm-expanded-user-14"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "130d0070-0ccd-54ce-a120-e6b865ad5155",
+          "current": "fm-x14-m001",
+          "current_user_ids": [
+            "fm-expanded-user-14"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "bdbe6a3a-802f-52e6-a5e7-3896f0b0fb43",
+          "current": "fm-x14-m001",
+          "current_user_ids": [
+            "fm-expanded-user-14"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "88b5a181-22ba-5e36-9fb5-3270c0e28cee",
+      "name": "JSON 解码错误类型修正",
+      "summary": "iter_json() / aiter_json() 在缺失或不支持的 Content-Type 时抛出 httpx.DecodingError，而非 Valu",
+      "description": "iter_json() / aiter_json() 在缺失或不支持的 Content-Type 时抛出 httpx.DecodingError，而非 ValueError。\n对声明了无效 charset 的情况，不得静默回退到检测，应抛出 DecodingError。\n后续提交已就绪，工作区干净，等待维护者二次评审。\n已修改错误路径为抛出 httpx.DecodingError，保留请求上下文、关闭一次性流且不消费响应体；静态检查、聚焦同步/异步错误检查及全部 response-model 测试通过，并已提交该反馈",
+      "entry_counts": {
+        "decisions": 2,
+        "experiences": 0,
+        "timeline": 2
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "c1f369eb-7770-5784-b44c-e32c01aa0fec",
+          "current": "fm-x31-m047",
+          "current_user_ids": [
+            "fm-expanded-user-31"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "e21c748b-23c1-5792-a609-f1a7321162c5",
+          "current": "fm-x31-m047",
+          "current_user_ids": [
+            "fm-expanded-user-31"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "5b0c9337-ab5d-506e-b134-8996a18cd1ef",
+      "name": "隐含交易量与所需管道容量",
+      "summary": "结果只以两行带标签的形式回复。",
+      "description": "结果只以两行带标签的形式回复。\nRequired Pipeline Capacity 的目标 ARR 取数据集中欧洲 Enterprise 细分全部 Won 交易之和，并按 Europe Enterprise 目标赢率计算，结果取整\nImplied Deal Volume 按 Upper Mid-Market 细分 Won 交易的实际平均单笔规模计算，结果取整到整笔交易。\nAgent 报告 Implied Deal Volume 为 222 deals。\nAgent 报告 Required Pipeline Capacity 为 $64,500,569。\n已给出 Implied Deal Volume（Upper Mid-Market Expansion）为 222 deals。\n已给出 Required Pipeline Capacity（Europe - Enterprise）为 $6",
+      "entry_counts": {
+        "decisions": 3,
+        "experiences": 0,
+        "timeline": 4
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "c7f3903a-a636-547b-ac5c-4e7208655a5b",
+          "current": "fm-x01-m001",
+          "current_user_ids": [
+            "fm-expanded-user-01"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "c4500260-bcec-5eac-9922-3bd81ddaeca2",
+          "current": "fm-x01-m001",
+          "current_user_ids": [
+            "fm-expanded-user-01"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "c0fc9b30-296a-5034-94b9-0b8aadb7b309",
+          "current": "fm-x01-m001",
+          "current_user_ids": [
+            "fm-expanded-user-01"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "c4417f46-8c40-54ee-908f-d6a6270bc3d4",
+      "name": "Validated.combine_n 实现",
+      "summary": "新增 Validated.combine_n(containers, function)，接收 N 个校验组成的元组，仅当全部有效时调用 N 元函数。",
+      "description": "新增 `Validated.combine_n(containers, function)`：接收 N 个校验组成的元组，仅当全部有效时调用 N 元函数。已支持空、固定及任意长度元组，常见元数保留异构参数类型，按输入顺序累积所有错误，失败时不调用回调，并已纳入特定接口。运行时元数/顺序/回调检查、全量源码 mypy、变长/HKT 类型、lint/format、slots、doctest 与文档均通过。",
+      "entry_counts": {
+        "decisions": 1,
+        "experiences": 0,
+        "timeline": 3
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "f2794add-7523-5a43-aa2c-e828979fc486",
+          "current": "fm-x21-m155",
+          "current_user_ids": [
+            "fm-expanded-user-21"
+          ],
+          "conflicts": [],
+          "history": [
+            "fm-x26-m093"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "83ebed1f-e392-5074-9483-a692c2c1e92b",
+      "name": "折扣审批人评分排名",
+      "summary": "并列名次获得相同分数：并列最高得 1 分，并列最少得 4 分，中间并列得 2 分。",
+      "description": "并列名次获得相同分数：并列最高得 1 分，并列最少得 4 分，中间并列得 2 分。\n所有分数四舍五入到最接近的整数。\n总分并列时，使用 criterion (4) 的 Director-level approval counts 作为 tiebreaker。\n按最终批准折扣与政策阈值比较，给出排名：Daniel Holden 12、Michael Chen 11、Sarah Martinez 11、Aisha Roberts 7。\n在 Discount Approval Logs 中找到四名审批人。\nMichael 以 Director-level approvals within policy 25 对 18 在并列中排在 Sarah 之前。\nAgent 确认两份审批日志 v1.0 与 v1.0(1) 完全相同，覆盖 800 笔交易。",
+      "entry_counts": {
+        "decisions": 3,
+        "experiences": 0,
+        "timeline": 4
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "6af96e79-7706-5a14-998a-03262f19d656",
+          "current": "fm-x04-m001",
+          "current_user_ids": [
+            "fm-expanded-user-04"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "ef0adee2-84bf-51de-9b57-a239b9566d4b",
+          "current": "fm-x04-m001",
+          "current_user_ids": [
+            "fm-expanded-user-04"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "e90070fc-12ae-5518-bdd0-19072fb8a11a",
+          "current": "fm-x04-m001",
+          "current_user_ids": [
+            "fm-expanded-user-04"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "080d5f2c-1265-59d6-bcdc-93adc1feddb9",
+      "name": "天气停电原因时长分析",
+      "summary": "按灾害类型归并天气停电原因并统计时长与事件频率；Outage ID 不能当作事件数。",
+      "description": "将洪水或风暴相关灾害归为 \"Weather - Storm\"，将高温或野火相关灾害归为 \"Weather - Heat\"。Outage ID 可能合并一个或多个事件，不能作为事件数。最终答案保留两位小数。Agent 报告：法国总停电时长最高的天气原因为 Weather - Heat，总停电时长 2,089.00 min，每年 23.42 次事件，每次事件平均停电 89.20 分钟；荷兰为 Weather - Storm，总停电时长 2,657.00 min，每年 29.26 次事件，每次事件平均停电 90.81 分钟。Storm 包含 Storm、Flooding 和 Ice Storm 灾害，平均值使用灾害事件频率而非 Outage ID 计数。源数据中的混乱标签和重复行检查未发现。",
+      "entry_counts": {
+        "decisions": 4,
+        "experiences": 0,
+        "timeline": 4
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "fdcc9c62-b646-5744-b528-07796cdb7848",
+          "current": "fm-x10-m001",
+          "current_user_ids": [
+            "fm-expanded-user-09",
+            "fm-expanded-user-10"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "03ab5a0f-24f5-58ee-b7bd-8bfc44e93a5d",
+          "current": "fm-x10-m001",
+          "current_user_ids": [
+            "fm-expanded-user-09",
+            "fm-expanded-user-10"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "ff067d84-d2e9-505e-9eec-46de0a118b4b",
+          "current": "fm-x10-m001",
+          "current_user_ids": [
+            "fm-expanded-user-09",
+            "fm-expanded-user-10"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "38c01c5a-dc6a-56e5-92dd-e8f5a024d52e",
+          "current": "fm-x10-m001",
+          "current_user_ids": [
+            "fm-expanded-user-09",
+            "fm-expanded-user-10"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "708589c4-3dad-5ff2-b6bf-7fbd0bd380ba",
+      "name": "内联表点号键规范化",
+      "summary": "内联表点号键规范化已修复：合并重复点号分支、清除表示用延续标记，保证值保留与精确往返。",
+      "description": "`to_inline_table` 现会规范化点号键后代在分支内联时保留的内部点号标记，使值保留且 `parse(dumps(doc))` 成功。转换前合并共享元组容器条目的重复点号分支，避免普通替换折叠分支导致值丢失；同时清除创建赋值键时仅用于表示的延续标记。已结构化合并重复点号后代、规范化内部延续标记并保留内联结果中的原始顺序。验证了 `[a] / b.c` 精确往返及精确多分支往返，mypy、Ruff 与全部 964 个现有测试通过。",
+      "entry_counts": {
+        "decisions": 1,
+        "experiences": 0,
+        "timeline": 3
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "f38758b4-42dc-5978-b4d1-4358a89c2e77",
+          "current": "fm-x20-m092",
+          "current_user_ids": [
+            "fm-expanded-user-20"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "3a188532-cfe3-5ca8-a4f8-655e7b958ff3",
+      "name": "内联表 AoT 转换报错",
+      "summary": "目标表下方任意位置存在 `AoT` 时，`to_inline_table` 必须抛出 `ConversionError`，不得把该 AoT 转换为数组。",
+      "description": "目标表下方任意位置存在 `AoT` 时，`to_inline_table` 必须抛出 `ConversionError`，不得把该 AoT 转换为数组。\n`ConversionError` 的 `key_path` 需携带请求的点分路径。\nAgent 报告 AoT 在任意递归深度下均以 `ConversionError(key_path=...)` 失败，且失败时文档保持逐字节不变。\nAgent 报告已提交该反馈修订。\nAgent 报告成功路径与已内联路径保持完整，964 个测试及 Ruff、聚焦 mypy 均通过。",
+      "entry_counts": {
+        "decisions": 2,
+        "experiences": 0,
+        "timeline": 3
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "8b0713ac-5967-5280-afaa-98739e2f9095",
+          "current": "fm-x25-m069",
+          "current_user_ids": [
+            "fm-expanded-user-25"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "fe90c329-68ac-533f-9f01-eac9861a7884",
+          "current": "fm-x25-m069",
+          "current_user_ids": [
+            "fm-expanded-user-25"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "703fd3ce-298e-5657-87ae-83a3c7f00246",
+      "name": "测试失败中止配置项",
+      "summary": "阈值参数接受正整数；`true` 表示 1，`false` 禁用。",
+      "description": "阈值参数接受正整数；`true` 表示 1，`false` 禁用。\n暂不改动 release metadata。\n保留正常报告、hooks 和退出处理，使用抑制后续事件的 abort 路径而非直接杀进程。\nfm-expanded-user-23 将结论从「`bail_on_test_failure` 设为 `true` 时，在首个符合条件的失败处中止。」改为「`bail_on_test_failure` 支持正整数 `N`，在第 N 个非 skipped/non-todo 失败时中止。」\nfm-expanded-user-23 将结论从「`bail_on_test_failure` 支持正整数 `N`，在第 N 个非 skipped/non-todo 失败时中止。」改为「`bail_on_test_failure` 默认 `false`，在 dev 和 CI 中生效。」",
+      "entry_counts": {
+        "decisions": 3,
+        "experiences": 0,
+        "timeline": 2
+      },
+      "embedded": true,
+      "decisions": [
+        {
+          "decision_id": "cb56f17a-a905-5e26-8666-a9305e1db4c7",
+          "current": "fm-x28-m022",
+          "current_user_ids": [
+            "fm-expanded-user-28"
+          ],
+          "conflicts": [
+            "fm-x23-m012"
+          ],
+          "history": []
+        },
+        {
+          "decision_id": "ec449e3d-dfe3-5b94-a171-9bdb8ea16047",
+          "current": "fm-x23-m012",
+          "current_user_ids": [
+            "fm-expanded-user-23"
+          ],
+          "conflicts": [],
+          "history": []
+        },
+        {
+          "decision_id": "58591e5d-9cab-5afc-add2-2e5d58f373a0",
+          "current": "fm-x23-m012",
+          "current_user_ids": [
+            "fm-expanded-user-23"
+          ],
+          "conflicts": [],
+          "history": []
+        }
+      ]
+    },
+    {
+      "topic_id": "100078b0-663f-51c9-996d-b7ec45602cf6",
+      "name": "资产故障概率与VOLL对比",
+      "summary": "Agent 报告了按资产类型汇总的结果：Transformer 平均调整后故障概率 54.09% 最高、每资产平均 VOLL €56.5M 最低；Transmi",
+      "description": "Agent 报告了按资产类型汇总的结果：Transformer 平均调整后故障概率 54.09% 最高、每资产平均 VOLL €56.5M 最低；Transmission Line 平均调整后故障概率\nAgent报告：输电线路平均每次停电调整后故障概率为51.59%，每资产平均VOLL为€82.2 million。\nAgent报告：变压器平均每次停电调整后故障概率最高，为54.09%；输电线路每资产平均VOLL最高。",
+      "entry_counts": {
+        "decisions": 0,
+        "experiences": 0,
+        "timeline": 3
+      },
+      "embedded": true,
+      "decisions": []
+    }
+  ],
+  "complete": true,
+  "error_type": null,
+  "schema": "frontier_eval_66c3a32af19f",
+  "memos_commit": "8dcaada402f7906ed234a574377f11d4858be27a",
+  "formation_count": 10,
+  "gold_work_count": 40,
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "seconds": 832.781,
+  "budget": {
+    "requests": 428,
+    "recorded_usage": 428,
+    "requests_without_usage": 0,
+    "input_tokens": 1441103,
+    "cached_input_tokens": 149632,
+    "output_tokens": 103461,
+    "estimated_usd": 0.5564841,
+    "by_scope": {
+      "dec.update": {
+        "requests": 164,
+        "recorded_usage": 164,
+        "requests_without_usage": 0,
+        "input_tokens": 302941,
+        "cached_input_tokens": 37888,
+        "output_tokens": 17550,
+        "estimated_usd": 0.1119423
+      },
+      "episode.assign": {
+        "requests": 68,
+        "recorded_usage": 68,
+        "requests_without_usage": 0,
+        "input_tokens": 565855,
+        "cached_input_tokens": 1152,
+        "output_tokens": 9963,
+        "estimated_usd": 0.1817121
+      },
+      "episode.assign.batch": {
+        "requests": 9,
+        "recorded_usage": 9,
+        "requests_without_usage": 0,
+        "input_tokens": 344086,
+        "cached_input_tokens": 0,
+        "output_tokens": 2439,
+        "estimated_usd": 0.1061526
+      },
+      "episode.extract": {
+        "requests": 80,
+        "recorded_usage": 80,
+        "requests_without_usage": 0,
+        "input_tokens": 114385,
+        "cached_input_tokens": 96512,
+        "output_tokens": 51157,
+        "estimated_usd": 0.0957039
+      },
+      "episode.formation": {
+        "requests": 6,
+        "recorded_usage": 6,
+        "requests_without_usage": 0,
+        "input_tokens": 81876,
+        "cached_input_tokens": 0,
+        "output_tokens": 4328,
+        "estimated_usd": 0.0297564
+      },
+      "episode.metadata": {
+        "requests": 101,
+        "recorded_usage": 101,
+        "requests_without_usage": 0,
+        "input_tokens": 31960,
+        "cached_input_tokens": 14080,
+        "output_tokens": 18024,
+        "estimated_usd": 0.0312168
+      }
+    },
+    "cap_usd": 1.0,
+    "stop_reason": null
+  }
+}

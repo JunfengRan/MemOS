@@ -1,0 +1,24 @@
+trace-id | path=None | memos.api.config - WARNING - config.py:207 - init - missing NACOS_SERVER_ADDR / AK / SK / DATA_ID
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 1 of 5 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 2 of 4 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 2 of 3 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 2 of 2 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 1 of 4 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 7 of 8 drafts without valid evidence
+Wave 1 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 1 of 6 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 1 of 3 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_runtime - WARNING - add_runtime.py:533 - _run_stage - Project Add stage awaiting_merge will retry (ModelError)
+trace-id | path=None | memos.project_memory.add_runtime - WARNING - add_runtime.py:533 - _run_stage - Project Add stage awaiting_merge will retry (ModelError)
+Wave 2 completed
+Wave 3 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 1 of 3 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 1 of 4 drafts without valid evidence
+Wave 4 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 1 of 4 drafts without valid evidence
+Wave 5 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 2 of 5 drafts without valid evidence
+Wave 6 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 1 of 2 drafts without valid evidence
+Wave 7 completed
+Flush completed: {'space_id': 'frontier-pilot', 'ran': True, 'formation_version': 6, 'topic_ids': ['12978009-3d8c-523e-8442-79ad68ce8528', '20f8a7aa-f7e2-5c7f-b0ae-6dfe65c695fe', '99b6d326-67d4-596f-b1f1-3eb0d8cf4b09', 'abe82e22-2f3b-5b3a-a081-d3195e2275d6', 'fd16dcf8-7604-5a55-8463-bf43954ce69c'], 'created_topic_ids': ['12978009-3d8c-523e-8442-79ad68ce8528', '20f8a7aa-f7e2-5c7f-b0ae-6dfe65c695fe', '99b6d326-67d4-596f-b1f1-3eb0d8cf4b09', 'abe82e22-2f3b-5b3a-a081-d3195e2275d6', 'fd16dcf8-7604-5a55-8463-bf43954ce69c'], 'moved': {'2fbe44e5-0d15-47da-a55a-b18de3606c00': '12978009-3d8c-523e-8442-79ad68ce8528', '8ca9eb99-e485-4b7d-a88d-f44bd75a2963': '12978009-3d8c-523e-8442-79ad68ce8528', '0502cbdb-35b6-49d2-ae29-87f6f3d92c71': '20f8a7aa-f7e2-5c7f-b0ae-6dfe65c695fe', '60736eaf-bab6-4dc6-a834-ba070534fc8e': '20f8a7aa-f7e2-5c7f-b0ae-6dfe65c695fe', 'b462b6c7-8daa-4465-bfc6-7985b274b23c': 'fd16dcf8-7604-5a55-8463-bf43954ce69c', '9b34f0ed-e89d-4d37-9bb4-6c56f5f53366': 'abe82e22-2f3b-5b3a-a081-d3195e2275d6', '0f0bb03d-a268-446e-aca2-0e60d9e4da0b': '99b6d326-67d4-596f-b1f1-3eb0d8cf4b09', '0d1311b3-594b-431c-8003-639ab840ed83': '99b6d326-67d4-596f-b1f1-3eb0d8cf4b09', '17d86560-c267-421a-8b21-7c7fce2b8682': 'abe82e22-2f3b-5b3a-a081-d3195e2275d6'}, 'staged': 9, 'rejected': []}

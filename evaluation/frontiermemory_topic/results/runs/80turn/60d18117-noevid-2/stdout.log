@@ -1,0 +1,23 @@
+trace-id | path=None | memos.api.config - WARNING - config.py:207 - init - missing NACOS_SERVER_ADDR / AK / SK / DATA_ID
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 1 of 4 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 1 of 9 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 3 of 4 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 1 of 5 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 4 of 4 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 2 of 7 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 5 of 7 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 8 of 8 drafts without valid evidence
+Wave 1 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 1 of 3 drafts without valid evidence
+Wave 2 completed
+Wave 3 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 1 of 4 drafts without valid evidence
+Wave 4 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 1 of 3 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 1 of 4 drafts without valid evidence
+Wave 5 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 2 of 5 drafts without valid evidence
+Wave 6 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:403 - extract_episode - Project Episode extraction dropped 1 of 2 drafts without valid evidence
+Wave 7 completed
+Flush completed: {'space_id': 'frontier-pilot', 'ran': True, 'formation_version': 6, 'topic_ids': ['1e1e3286-6e47-50fb-b4a2-cfe6aed332c3', '39bbcea2-7e78-58be-82d2-6675e00cbdec', 'd6a30091-8fc8-5145-a0d5-a42a968da3f9'], 'created_topic_ids': ['1e1e3286-6e47-50fb-b4a2-cfe6aed332c3', '39bbcea2-7e78-58be-82d2-6675e00cbdec', 'd6a30091-8fc8-5145-a0d5-a42a968da3f9'], 'moved': {'45bcd968-d005-4631-a327-ad6f7a926fd1': '1e1e3286-6e47-50fb-b4a2-cfe6aed332c3', 'c5b9e549-75d3-4779-92df-af755b6c8cac': '1e1e3286-6e47-50fb-b4a2-cfe6aed332c3', 'f0d265ca-b095-455c-b503-e388155fd05f': '39bbcea2-7e78-58be-82d2-6675e00cbdec', '1b37da1b-b03d-44d0-999c-b1e2a5272cd8': '39bbcea2-7e78-58be-82d2-6675e00cbdec', '1cadb8c6-f256-478c-809e-8ec2914e4e12': 'd6a30091-8fc8-5145-a0d5-a42a968da3f9'}, 'staged': 5, 'rejected': []}
