@@ -1,0 +1,85 @@
+{
+  "reviewer_model": "gpt-6-luna",
+  "usage": {
+    "calls": 5,
+    "input_tokens": 1748,
+    "output_tokens": 829
+  },
+  "verdicts": [
+    {
+      "kind": "merge",
+      "topic_id": "11899cca-cb46-5f41-9bfa-a4b762265feb",
+      "tasks": [
+        "returns-cond-validated-integration",
+        "returns-container-bind-validated",
+        "returns-pointfree-bind-validated"
+      ],
+      "verdict": "unreasonable",
+      "reason": "cond 对 Validated 的分发与 bind_validated 接口及 pointfree 封装可独立交付，属于不同工作。"
+    },
+    {
+      "kind": "merge",
+      "topic_id": "5667415f-8c04-5b1f-8946-6373440f53bf",
+      "tasks": [
+        "returns-minor-release",
+        "returns-validated-decorator"
+      ],
+      "verdict": "reasonable",
+      "reason": "新增装饰器是待交付内容，版本验收与发布决定受其完成情况影响，属于同一交付主题。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "sqlite-utils-release-version"
+      ],
+      "topic_ids": [
+        "1153eff5-be28-5d6e-9967-a3da2b939695",
+        "855c7761-1b93-5495-8a1d-952e8636064e"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两主题结论相同，都是本次改动不提升版本号，属于同一项工作。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "testem-bail-state-reset"
+      ],
+      "topic_ids": [
+        "535e46ff-f95f-526c-b5de-b9ce5975c36d",
+        "94eb523a-57d9-5add-8a8e-a46f53861b63"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两部分都属于 resetBailState 重置功能：入口重置与子报告器清理共同决定重置后的结果，应归为同一项工作。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "tomlkit-conversion-api"
+      ],
+      "topic_ids": [
+        "8486d034-d4ba-5382-9025-ea423db51728",
+        "fe5931cd-46f7-5757-95cd-3428bc37fcb0"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两者都是 to_inline_table 的转换规则，属于同一功能的子问题，不应拆成两项工作。"
+    }
+  ],
+  "allow_split_or_merge_reviewed": {
+    "correct": 34,
+    "total": 65,
+    "rate": 0.5230769230769231
+  },
+  "allow_split_or_merge_reviewed_full_coverage": {
+    "correct": 30,
+    "total": 65,
+    "rate": 0.46153846153846156
+  },
+  "rejected_tasks": [
+    "returns-cond-validated-integration",
+    "returns-container-bind-validated",
+    "returns-pointfree-bind-validated",
+    "sqlite-utils-release-version",
+    "testem-bail-state-reset",
+    "tomlkit-conversion-api"
+  ]
+}

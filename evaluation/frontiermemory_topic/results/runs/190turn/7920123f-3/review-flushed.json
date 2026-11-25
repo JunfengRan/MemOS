@@ -1,0 +1,48 @@
+{
+  "reviewer_model": "gpt-6-luna",
+  "usage": {
+    "calls": 2,
+    "input_tokens": 669,
+    "output_tokens": 201
+  },
+  "verdicts": [
+    {
+      "kind": "split",
+      "tasks": [
+        "returns-minor-release"
+      ],
+      "topic_ids": [
+        "1945abc2-5341-5a77-8295-2693c6d665f9",
+        "9c071fef-8013-5c63-b18f-1c59434cfbc0"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两者都围绕同一次版本发布；提升版本号会影响 0.27.0 的审计与批准结论，应属同一项工作。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "tomlkit-conversion-api"
+      ],
+      "topic_ids": [
+        "6880fd86-5f58-5f4e-a1f9-1e10cbb826df",
+        "724533f5-1f0c-5685-abcb-59a0cde6ec0c"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两者都是 to_inline_table 的转换规则，属于同一功能的子问题，应合并。"
+    }
+  ],
+  "allow_split_or_merge_reviewed": {
+    "correct": 34,
+    "total": 65,
+    "rate": 0.5230769230769231
+  },
+  "allow_split_or_merge_reviewed_full_coverage": {
+    "correct": 29,
+    "total": 65,
+    "rate": 0.4461538461538462
+  },
+  "rejected_tasks": [
+    "returns-minor-release",
+    "tomlkit-conversion-api"
+  ]
+}

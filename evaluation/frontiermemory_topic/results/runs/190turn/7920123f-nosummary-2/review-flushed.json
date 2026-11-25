@@ -1,0 +1,83 @@
+{
+  "reviewer_model": "gpt-6-luna",
+  "usage": {
+    "calls": 5,
+    "input_tokens": 2316,
+    "output_tokens": 878
+  },
+  "verdicts": [
+    {
+      "kind": "merge",
+      "topic_id": "07cfce4b-496a-50ba-8b17-a2003fa850dd",
+      "tasks": [
+        "testem-bail-exit-error",
+        "testem-reporter-bail-state",
+        "testem-teamcity-bail-report",
+        "testem-xunit-bail-report"
+      ],
+      "verdict": "unreasonable",
+      "reason": "核心 bail 契约、App 退出码及 TeamCity、XUnit 输出可分别交付，后两种格式也互不影响。"
+    },
+    {
+      "kind": "merge",
+      "topic_id": "0da4e6e0-b773-5202-bf9a-f1c1948e2a4a",
+      "tasks": [
+        "clack-async-autocomplete-result-cache-api",
+        "clack-async-autocomplete-stale-while-revalidate"
+      ],
+      "verdict": "reasonable",
+      "reason": "两组都在完善自动补全缓存功能，SWR 是缓存的可选行为，与 clearCache 属于同一工作主题。"
+    },
+    {
+      "kind": "merge",
+      "topic_id": "7391def7-fb33-5057-8150-cf99efbfcf42",
+      "tasks": [
+        "returns-container-bind-validated",
+        "returns-pointfree-bind-validated"
+      ],
+      "verdict": "reasonable",
+      "reason": "容器方法与 pointfree 导出共同提供同一项 bind_validated 功能。"
+    },
+    {
+      "kind": "merge",
+      "topic_id": "855cdaa9-9f0f-56bd-a850-3c278587b5c0",
+      "tasks": [
+        "returns-cond-validated-integration",
+        "returns-hypothesis-validated-strategy"
+      ],
+      "verdict": "unreasonable",
+      "reason": "cond 分发与 Hypothesis 容器生成可独立交付，彼此结论变化也不影响对方，属于两项工作。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "tomlkit-conversion-api"
+      ],
+      "topic_ids": [
+        "3a2c28bd-2ef1-5aa1-9dc1-2f1919d2c063",
+        "923c0ddc-b830-5180-b133-15b03e661f77"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两者都是 to_inline_table 的边界处理，属于同一功能的子问题"
+    }
+  ],
+  "allow_split_or_merge_reviewed": {
+    "correct": 30,
+    "total": 65,
+    "rate": 0.46153846153846156
+  },
+  "allow_split_or_merge_reviewed_full_coverage": {
+    "correct": 25,
+    "total": 65,
+    "rate": 0.38461538461538464
+  },
+  "rejected_tasks": [
+    "returns-cond-validated-integration",
+    "returns-hypothesis-validated-strategy",
+    "testem-bail-exit-error",
+    "testem-reporter-bail-state",
+    "testem-teamcity-bail-report",
+    "testem-xunit-bail-report",
+    "tomlkit-conversion-api"
+  ]
+}

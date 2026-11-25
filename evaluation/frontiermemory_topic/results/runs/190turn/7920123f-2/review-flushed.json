@@ -1,0 +1,64 @@
+{
+  "reviewer_model": "gpt-6-luna",
+  "usage": {
+    "calls": 3,
+    "input_tokens": 1307,
+    "output_tokens": 389
+  },
+  "verdicts": [
+    {
+      "kind": "merge",
+      "topic_id": "be0d5d72-77db-515d-a4c2-06dfa4b2278c",
+      "tasks": [
+        "returns-container-bind-validated",
+        "returns-minor-release",
+        "returns-pointfree-bind-validated",
+        "returns-validatedlike-interface-laws"
+      ],
+      "verdict": "unreasonable",
+      "reason": "发布版本审批可独立交付，且不影响 bind_validated 容器、pointfree 或接口工作。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "clack-async-autocomplete-async-load-error"
+      ],
+      "topic_ids": [
+        "270ce669-3c30-5e59-8add-91bffba7cb93",
+        "505a8bca-970e-57b6-bf54-d7c8972dfc6d"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两组都涉及同一异步加载错误状态，且共同定义 loadError 的设置与重置行为，结论相互影响。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "tomlkit-conversion-api"
+      ],
+      "topic_ids": [
+        "1d95cb7b-621e-53f8-993a-0decf90db5eb",
+        "4f1fbbff-3700-5009-b8be-52a563372fd2"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两者都是 to_inline_table 的转换规则子问题，属于同一功能，不能拆为独立工作。"
+    }
+  ],
+  "allow_split_or_merge_reviewed": {
+    "correct": 28,
+    "total": 65,
+    "rate": 0.4307692307692308
+  },
+  "allow_split_or_merge_reviewed_full_coverage": {
+    "correct": 26,
+    "total": 65,
+    "rate": 0.4
+  },
+  "rejected_tasks": [
+    "clack-async-autocomplete-async-load-error",
+    "returns-container-bind-validated",
+    "returns-minor-release",
+    "returns-pointfree-bind-validated",
+    "returns-validatedlike-interface-laws",
+    "tomlkit-conversion-api"
+  ]
+}

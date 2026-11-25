@@ -1,0 +1,106 @@
+{
+  "reviewer_model": "gpt-6-luna",
+  "usage": {
+    "calls": 7,
+    "input_tokens": 4127,
+    "output_tokens": 1117
+  },
+  "verdicts": [
+    {
+      "kind": "merge",
+      "topic_id": "2463511d-63ea-545c-ba4d-ce173511f05c",
+      "tasks": [
+        "returns-container-bind-validated",
+        "returns-pointfree-bind-validated"
+      ],
+      "verdict": "reasonable",
+      "reason": "容器方法与 pointfree 包装共同补齐同一功能的两种 API 入口。"
+    },
+    {
+      "kind": "merge",
+      "topic_id": "5f026522-20b4-5552-ac11-c8c577b0b354",
+      "tasks": [
+        "clack-async-autocomplete-result-cache-api",
+        "clack-async-autocomplete-stale-while-revalidate"
+      ],
+      "verdict": "reasonable",
+      "reason": "两组都在完善自动补全结果缓存功能，clearCache、缓存命中与 stale-while-revalidate 属于同一项工作的接口和行为。"
+    },
+    {
+      "kind": "merge",
+      "topic_id": "7c01b22a-e8c0-5ca5-8089-9b7d68fcc0b4",
+      "tasks": [
+        "returns-minor-release",
+        "returns-validated-decorator"
+      ],
+      "verdict": "unreasonable",
+      "reason": "新增装饰器与版本发布审批可分别完成交付，彼此结论变化也不影响对方。"
+    },
+    {
+      "kind": "merge",
+      "topic_id": "91259492-fe66-5b9a-9a8a-a3258aa0e63d",
+      "tasks": [
+        "testem-tap-dot-bail-report",
+        "testem-xunit-bail-report"
+      ],
+      "verdict": "unreasonable",
+      "reason": "TAP/Dot 与 XUnit 是可独立交付的不同报告器输出，彼此结论变化不影响对方。"
+    },
+    {
+      "kind": "merge",
+      "topic_id": "fd2821af-eac5-5429-9573-4c570b3b426f",
+      "tasks": [
+        "httpx-streaming-json-array-element-iteration",
+        "httpx-streaming-json-content-type-decoding-error",
+        "httpx-streaming-json-iter-json-api",
+        "httpx-streaming-json-ndjson-first-nonblank-bom",
+        "httpx-streaming-json-seq-framing",
+        "httpx-streaming-json-standard-json-bom"
+      ],
+      "verdict": "reasonable",
+      "reason": "都在完善同一项响应流式 JSON 迭代功能，涵盖解析、媒体类型、错误、边界行为与文档。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "clack-async-autocomplete-async-load-error"
+      ],
+      "topic_ids": [
+        "1588b1af-5f35-506b-9723-73ff80e5817c",
+        "757be5bf-54ab-5d27-9289-1752797fbaf9"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两主题都定义 loadError 的错误处理，且非中止失败的设置时机相互关联，属于同一异步错误状态工作。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "tomlkit-conversion-api"
+      ],
+      "topic_ids": [
+        "88706db2-57eb-5db4-969a-374355902862",
+        "cb017d10-10ec-5589-bc23-ac72698d3e40"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两者都是 to_inline_table 的转换规则与边界处理，属于同一功能的子问题。"
+    }
+  ],
+  "allow_split_or_merge_reviewed": {
+    "correct": 31,
+    "total": 65,
+    "rate": 0.47692307692307695
+  },
+  "allow_split_or_merge_reviewed_full_coverage": {
+    "correct": 25,
+    "total": 65,
+    "rate": 0.38461538461538464
+  },
+  "rejected_tasks": [
+    "clack-async-autocomplete-async-load-error",
+    "returns-minor-release",
+    "returns-validated-decorator",
+    "testem-tap-dot-bail-report",
+    "testem-xunit-bail-report",
+    "tomlkit-conversion-api"
+  ]
+}

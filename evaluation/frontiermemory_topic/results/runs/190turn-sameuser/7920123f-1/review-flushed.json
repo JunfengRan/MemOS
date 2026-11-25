@@ -1,0 +1,109 @@
+{
+  "reviewer_model": "gpt-6-luna",
+  "usage": {
+    "calls": 7,
+    "input_tokens": 2942,
+    "output_tokens": 953
+  },
+  "verdicts": [
+    {
+      "kind": "merge",
+      "topic_id": "1d4f4111-2347-5546-a30f-99390c87600e",
+      "tasks": [
+        "returns-container-bind-validated",
+        "returns-pointfree-bind-validated"
+      ],
+      "verdict": "reasonable",
+      "reason": "两者共同补齐 Validated 的 bind_validated API，点函数委托容器方法，属于同一功能的不同接口层。"
+    },
+    {
+      "kind": "merge",
+      "topic_id": "539bf314-6a9e-506f-bfa9-b22baeba7e8c",
+      "tasks": [
+        "testem-bail-exit-error",
+        "testem-tap-dot-bail-report"
+      ],
+      "verdict": "unreasonable",
+      "reason": "getExitCode 错误契约与 TAP/Dot 人类可读输出可分别交付，结论互不影响。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "clack-async-autocomplete-async-load-error"
+      ],
+      "topic_ids": [
+        "0977ece4-8838-5ea1-9b92-7d875799f1e1",
+        "0f28ebb3-6f6b-5bea-87d3-b0ff71c76587"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两主题都涉及 loadError 的暴露与错误处理，属于同一状态功能，结论相互影响。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "returns-validatedlike-interface-laws"
+      ],
+      "topic_ids": [
+        "75c89403-4199-531f-b864-17555009346f",
+        "971c2603-3875-5b5c-88b2-8a9495ae1961"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两者都涉及 ValidatedLikeN 的专属失败 laws，且 specs 依赖接口层级拆分，不能独立交付。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "testem-bail-threshold-config"
+      ],
+      "topic_ids": [
+        "414c3ac5-35af-5ebb-8625-a498bd2871d7",
+        "e901b950-ce29-5e2a-b464-88b533e9f6b6"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两组轮次都在推进同一项 Testem 失败即停功能，runner 中止流程与配置及行为要求属于同一工作。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "testem-reporter-bail-state"
+      ],
+      "topic_ids": [
+        "52e4b6d7-7180-5b84-971f-982b9c1777a5",
+        "e4d80002-97f7-5c34-81a3-247f4cc27e49"
+      ],
+      "verdict": "unreasonable",
+      "reason": "均属同一 bail 功能的状态与对外契约，子问题不能视为独立工作。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "tomlkit-conversion-api"
+      ],
+      "topic_ids": [
+        "6f4e9c7b-27eb-50cb-94c7-8a271e48b2a5",
+        "f5993b4e-8691-5f36-8cdf-28b0c4a9d3af"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两项都是 to_inline_table 的转换规则，属于同一功能的子问题，应合并。"
+    }
+  ],
+  "allow_split_or_merge_reviewed": {
+    "correct": 30,
+    "total": 65,
+    "rate": 0.46153846153846156
+  },
+  "allow_split_or_merge_reviewed_full_coverage": {
+    "correct": 28,
+    "total": 65,
+    "rate": 0.4307692307692308
+  },
+  "rejected_tasks": [
+    "clack-async-autocomplete-async-load-error",
+    "returns-validatedlike-interface-laws",
+    "testem-bail-exit-error",
+    "testem-bail-threshold-config",
+    "testem-reporter-bail-state",
+    "testem-tap-dot-bail-report",
+    "tomlkit-conversion-api"
+  ]
+}

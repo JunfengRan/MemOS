@@ -1,0 +1,112 @@
+{
+  "reviewer_model": "gpt-6-luna",
+  "usage": {
+    "calls": 7,
+    "input_tokens": 2761,
+    "output_tokens": 1302
+  },
+  "verdicts": [
+    {
+      "kind": "merge",
+      "topic_id": "488916a2-22f6-5c85-9aa9-6821aedf4108",
+      "tasks": [
+        "returns-minor-release",
+        "returns-validated-decorator"
+      ],
+      "verdict": "unreasonable",
+      "reason": "发布 0.27.0 的审批与新增装饰器接口是不同工作，可分别交付。"
+    },
+    {
+      "kind": "merge",
+      "topic_id": "b5752616-70f0-54ea-91fc-0d03923a70db",
+      "tasks": [
+        "testem-teamcity-bail-report",
+        "testem-xunit-bail-report"
+      ],
+      "verdict": "unreasonable",
+      "reason": "TeamCity 与 XUnit 是可独立交付的不同 reporter 输出，彼此结论变化不影响对方。"
+    },
+    {
+      "kind": "merge",
+      "topic_id": "de54349b-4501-5bc1-b5e9-78da327f9810",
+      "tasks": [
+        "clack-async-autocomplete-fallback-options",
+        "clack-async-autocomplete-result-cache-api",
+        "clack-async-autocomplete-stale-while-revalidate"
+      ],
+      "verdict": "unreasonable",
+      "reason": "fallbackOptions 是独立的错误回退功能，与缓存及 clearCache 无关，结论可分别变化。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "clack-async-autocomplete-async-load-error"
+      ],
+      "topic_ids": [
+        "13032e5b-4aaa-5a96-a60c-841710f92dc4",
+        "57ad0263-125c-5e46-8fdf-dc050d90f104"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两主题都涉及 loadError 与非中止错误处理，属于同一异步错误状态功能，结论相互影响。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "clack-async-autocomplete-loading-state"
+      ],
+      "topic_ids": [
+        "8ebaefbc-1f74-55c3-ab41-56923afb7b25",
+        "f04c7a75-9015-5052-b3f3-e09929c2ff86"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两部分都在约定并调整公共 loading 状态及包装器读取方式，属于同一项工作。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "returns-validatedlike-interface-laws"
+      ],
+      "topic_ids": [
+        "4f35b1d3-0313-5a08-927f-dd9a9dc0f35e",
+        "8ce8a8c1-bf19-59e5-b2cc-f6cc4fb8c5bc"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两者都围绕 ValidatedLikeN 的接口与自有失败法则，法则补全依赖接口拆分，属于同一项工作。"
+    },
+    {
+      "kind": "split",
+      "tasks": [
+        "tomlkit-conversion-api"
+      ],
+      "topic_ids": [
+        "4cdf55ed-1edf-5cb9-8581-d0682fb68cf2",
+        "5a9ddb39-6865-55d9-b358-8fcf15feac0a"
+      ],
+      "verdict": "unreasonable",
+      "reason": "两者都是 to_inline_table 的后代处理规则，属于同一功能的子问题。"
+    }
+  ],
+  "allow_split_or_merge_reviewed": {
+    "correct": 25,
+    "total": 65,
+    "rate": 0.38461538461538464
+  },
+  "allow_split_or_merge_reviewed_full_coverage": {
+    "correct": 23,
+    "total": 65,
+    "rate": 0.35384615384615387
+  },
+  "rejected_tasks": [
+    "clack-async-autocomplete-async-load-error",
+    "clack-async-autocomplete-fallback-options",
+    "clack-async-autocomplete-loading-state",
+    "clack-async-autocomplete-result-cache-api",
+    "clack-async-autocomplete-stale-while-revalidate",
+    "returns-minor-release",
+    "returns-validated-decorator",
+    "returns-validatedlike-interface-laws",
+    "testem-teamcity-bail-report",
+    "testem-xunit-bail-report",
+    "tomlkit-conversion-api"
+  ]
+}
