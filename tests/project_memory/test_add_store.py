@@ -20,9 +20,7 @@ def add_store():
     if not dsn:
         pytest.skip("PG_TEST_DSN is required for the relational project memory tests")
     schema = f"test_add_{uuid.uuid4().hex}"
-    store = PostgresAddStore(
-        {"dsn": dsn, "schema_name": schema, "embedding_dimension": 3}, project_id="project-a"
-    )
+    store = PostgresAddStore({"dsn": dsn, "schema_name": schema, "embedding_dimension": 3})
     try:
         yield store
     finally:
@@ -39,11 +37,10 @@ def test_schema_and_rollback(add_store):
             "domains",
             "topics",
             "project_entries",
-            "add_space_state",
+            "add_jobs",
             "add_episode_events",
             "messages",
             "episodes",
-            "episode_turns",
         }
 
     with pytest.raises(ValueError, match="abort"), add_store.transaction() as cursor:
@@ -55,7 +52,8 @@ def test_schema_and_rollback(add_store):
     assert add_store.read_space("space-a") is None
 
 
-def test_reads_stay_in_project_scope(add_store):
+def test_reads_follow_the_space_across_projects(add_store):
+    """One store serves every project: reads go by Space, and each row keeps its own project."""
     with add_store.transaction() as cursor:
         for space, project in [("space-a", "project-a"), ("space-b", "project-b")]:
             cursor.execute(
@@ -73,13 +71,14 @@ def test_reads_stay_in_project_scope(add_store):
                 (f"{space}-topic", space, f"{space}-domain"),
             )
 
-    assert add_store.read_space("space-a")["space_name"] == "space-a"
-    assert add_store.read_space("space-b") is None
+    assert add_store.read_space("space-a")["project_id"] == "project-a"
+    assert add_store.read_space("space-b")["project_id"] == "project-b"
+    assert add_store.read_space("missing") is None
     assert [topic["id"] for topic in add_store.read_topics("space-a", ["development"])] == [
         "space-a-topic"
     ]
     assert add_store.read_topics("space-a", topic_ids=[]) == []
-    assert add_store.read_topics("space-b") == []
+    assert [topic["id"] for topic in add_store.read_topics("space-b")] == ["space-b-topic"]
 
 
 @pytest.mark.parametrize("moved", [False, True], ids=["committed", "moved"])
@@ -103,6 +102,7 @@ def test_formation_recalls_immediate_predecessor_without_changing_task_receipt(a
     def accept(task_id):
         (eid,) = acceptance.accept(
             SimpleNamespace(
+                project_id="project-a",
                 task_id=task_id,
                 user_id="member",
                 space_ids=["space-a"],
@@ -117,35 +117,42 @@ def test_formation_recalls_immediate_predecessor_without_changing_task_receipt(a
     staged_id = accept("follow-up-task")
     prior_topics = [] if moved else ["prior-topic"]
     with add_store.transaction() as cursor:
-        cursor.execute(
-            "UPDATE episodes SET state='extracted', stage='done', outcome='committed', result=%s WHERE id=%s",
-            (json_value({"topic_ids": ["older-topic"]}), older_id),
+
+        def finish(episode_id, outcome, topic_ids, staged=None, summary=None):
+            result = {"extraction": {"at": "2026-11-19T00:00:00+00:00"}}
+            if staged:
+                result["staged"] = {"status": staged, "at": "2026-11-19T00:00:00+00:00"}
+            cursor.execute(
+                """UPDATE add_jobs SET stage = 'done', outcome = %s, topic_ids = %s,
+                          organize_result = organize_result || %s WHERE episode_id = %s""",
+                (outcome, topic_ids, json_value(result), episode_id),
+            )
+            cursor.execute(
+                "UPDATE episodes SET topic_id = %s, episode_summary = %s WHERE id = %s",
+                (topic_ids[0] if topic_ids else None, summary, episode_id),
+            )
+
+        finish(older_id, "committed", ["older-topic"])
+        finish(
+            prior_id,
+            "staged" if moved else "committed",
+            prior_topics,
+            staged="active" if moved else None,
         )
-        cursor.execute(
-            """UPDATE episodes SET state='extracted', stage='done', outcome=%s, result=%s,
-                       staged_status=%s, staged_at=CASE WHEN %s THEN now() END WHERE id=%s""",
-            (
-                "staged" if moved else "committed",
-                json_value({"topic_ids": prior_topics}),
-                "active" if moved else None,
-                moved,
-                prior_id,
-            ),
-        )
-        cursor.execute(
-            """UPDATE episodes SET state='extracted', stage='done', outcome='staged',
-                       staged_status='active', staged_at=now(), episode_summary='Follow-up notes'
-               WHERE id=%s""",
-            (staged_id,),
-        )
+        finish(staged_id, "staged", [], staged="active", summary="Follow-up notes")
     original_status = acceptance.status("original-task", "member")
     assert original_status["memory_views"]["project"]["memory_ids"] == prior_topics
     if moved:
+        # Formation moves the prior Episode: outcome committed, its Topic set, receipt kept.
         with add_store.transaction() as cursor:
             cursor.execute(
-                """UPDATE episodes SET staged_status='moved', moved_to_topic_id='prior-topic'
-                   WHERE id=%s""",
+                """UPDATE add_jobs SET outcome = 'committed', organize_result = organize_result
+                          || '{"staged": {"status": "moved", "moved_to": "prior-topic"}}'
+                   WHERE episode_id = %s""",
                 (prior_id,),
+            )
+            cursor.execute(
+                "UPDATE episodes SET topic_id = 'prior-topic' WHERE id = %s", (prior_id,)
             )
 
     (staged,) = add_store.read_staged("space-a")
@@ -192,7 +199,10 @@ def test_formation_recalls_immediate_predecessor_without_changing_task_receipt(a
     (assignment,) = plan["assignments"]
     assert assignment["topic"]["id"] == "prior-topic"
     assert [episode["id"] for episode in assignment["episodes"]] == [staged_id]
-    assert acceptance.status("original-task", "member") == original_status
+    # The move changes the Episode's outcome, not the Task's receipt.
+    after = acceptance.status("original-task", "member")
+    assert after["status"] == original_status["status"]
+    assert after["memory_views"]["project"]["memory_ids"] == prior_topics
 
 
 def test_an_installed_zh_configuration_is_used_without_zhparser():
@@ -202,9 +212,9 @@ def test_an_installed_zh_configuration_is_used_without_zhparser():
     schema = f"test_add_{uuid.uuid4().hex}"
     config = {"dsn": dsn, "schema_name": schema, "embedding_dimension": 3}
     with pytest.raises(RuntimeError, match="zhparser"):
-        PostgresAddStore({**config, "text_search_parser": "zhparser"}, project_id="p")
-    PostgresAddStore({**config, "text_search_parser": "simple"}, project_id="p").close()
-    store = PostgresAddStore({**config, "text_search_parser": "zhparser"}, project_id="p")
+        PostgresAddStore({**config, "text_search_parser": "zhparser"})
+    PostgresAddStore({**config, "text_search_parser": "simple"}).close()
+    store = PostgresAddStore({**config, "text_search_parser": "zhparser"})
     try:
         with store.transaction(readonly=True) as cursor:
             cursor.execute("SELECT to_regclass(%s) AS present", (f"{schema}.project_entries",))

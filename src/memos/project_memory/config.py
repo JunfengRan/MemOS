@@ -19,6 +19,8 @@
 | PROJECT_MEMORY_SQLITE_PATH | $MEMOS_BASE_PATH/.memos/project_memory.db | |
 | PROJECT_DB_HOST / PORT / USER / PASSWORD / NAME | 退回 PROJECT_MEMORY_POSTGRES_*，再退回 POSTGRES_* | 与存储层 memos.project_dbs 共用；也可用 PROJECT_MEMORY_POSTGRES_DSN 一次给全 |
 | PROJECT_DB_TEXT_SEARCH_PARSER | zhparser | 共享表的中文全文配置；本地没有 zhparser 时设 simple |
+| PROJECT_MEMORY_LIMITS_FILE | 无 | 长度上限的 YAML/JSON 文件，只写要改的键；默认值见 memos/configs/project_memory_limits.yaml |
+| PROJECT_MEMORY_LIMIT_<KEY> | 见上述 YAML | 单项覆盖，如 PROJECT_MEMORY_LIMIT_TOPIC_SUMMARY=200；按「字」计（一个汉字或一个英文单词），优先级最高 |
 | PROJECT_MEMORY_POSTGRES_SCHEMA | project_memory | 表建在这个 schema 下，与核心的表分开 |
 | PROJECT_MEMORY_POSTGRES_MAX_CONNECTIONS | 10 | 连接池上限；并行整理时每个线程占一个 |
 | PROJECT_MEMORY_PARALLEL_EPISODE | true | 一段之内决策与经验两条线并行 |
@@ -169,9 +171,8 @@ def postgres_config(embedding_dimension: int | None = None) -> dict[str, Any]:
         "text_search_parser": (os.getenv("PROJECT_DB_TEXT_SEARCH_PARSER") or "zhparser")
         .strip()
         .lower(),
-        # The retrieval service reads MEMOS_PROJECT_MEMORY_DSN; it must be this same database so
-        # Add can publish into its index inside each commit.
-        "retrieval_index": bool(os.getenv("MEMOS_PROJECT_MEMORY_DSN")),
+        # Publish the search index in the same transaction as the PostgreSQL Add.
+        "retrieval_index": True,
     }
 
 

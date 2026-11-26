@@ -18,7 +18,8 @@ from .add_evidence import (
     text_at,
     unwitnessed_tokens,
 )
-from .judge import ModelError
+from .add_limits import LIMITS, cut_at_sentence
+from .judge import ModelError, fill
 from .types import stable_uuid, time_key
 
 
@@ -29,10 +30,12 @@ if TYPE_CHECKING:
 _EXTRACT = """[系统]
 你为项目整理一段完整 Episode。仅输出一个 JSON 对象，包含 episode_summary 和 drafts 数组。
 episode_summary 开头先写成员本段要交付的具体对象（功能、接口、配置项、规则或产出物），保留原文标识符；
-成员一段里提出多项独立要求时逐项点名，不能只写其中一项。之后写成员的结论和相关资源，不写推测，200 字以内。
+成员一段里提出多项独立要求时逐项点名，不能只写其中一项。之后写成员的结论和相关资源，不写推测，{summary_limit} 字以内。
 不要补“仅为规则说明”“未见后续进展”这类对状态的套话，摘要只陈述这一段实际出现的内容。
 闲聊或没可保留的事实输出空数组。prior 只帮助理解，不能为新结论授权。
 drafts 每项给出 kind、content、message_id、quote、origin，可附 source_path（默认 /content）。
+content 字数上限：decision {decision_limit} 字，timeline {timeline_limit} 字，experience {experience_limit} 字（一个汉字或一个英文单词计一字），
+超出时自行精简，保留对象、取值与原因。
 kind 是 decision（成员确定的团队做法）、experience（有场景与证据的经验）、timeline（可验证的进展）。
 decision 只记范围内的规则、对外约定和共同约定。对 Agent 回复格式或表达方式的要求、一次性的局部实现、
 执行步骤、未采纳的方案和未决事项都不是 decision，不要输出。成员对某个具体对象（配置、数值、时点、阈值）
@@ -236,7 +239,7 @@ def _draft(
     clues = [
         x for x in raw.get("current_state_clues") or [] if isinstance(x, str) and x and x in text
     ]
-    content = content.strip()[: 200 if kind == "experience" else 100]
+    content = cut_at_sentence(content, LIMITS.entry(kind))[0]
     # A reference may match normalized whitespace, but commit checks the original slice.
     source_quote = text[ref["start"] : ref["end"]]
     evidence = [{"ref": ref, "quote": source_quote}]
@@ -286,6 +289,24 @@ def _draft(
         "listed": listed,
         "card": raw.get("card") if isinstance(raw.get("card"), dict) else {},
     }
+
+
+def _witness_validations(drafts: Any, messages: list[dict]) -> None:
+    """Mark each experience whose stated validation occurs anywhere in this Episode.
+
+    Test, build and review results usually arrive in tool output or a later Agent reply,
+    not in the one message an experience quotes, so the whole Episode is the witness.
+    """
+    raw = "\n".join(
+        f"{message.get('content') or ''}\n{json.dumps(message.get('tool_calls') or '')}"
+        for message in messages
+    )
+    episode_text = " ".join(raw.split())
+    for draft in drafts:
+        card = draft.get("card") or {}
+        validation = card.get("validation")
+        if draft["kind"] == "experience" and isinstance(validation, str) and validation.strip():
+            card["validation_witnessed"] = " ".join(validation.split()) in episode_text
 
 
 def _member_anchored(item: dict, row: dict, member: dict) -> tuple[dict, dict]:
@@ -351,9 +372,21 @@ def extract_episode(
     model_inputs = {
         "prior": prior,
         "episode": current,
-        "previous_summary": str((episode.get("previous") or {}).get("episode_summary") or "")[:200],
+        "previous_summary": cut_at_sentence(
+            str((episode.get("previous") or {}).get("episode_summary") or ""),
+            LIMITS.episode_summary,
+        )[0],
     }
-    output = hub.write("episode.extract", _EXTRACT, model_inputs)
+    prompt = fill(
+        _EXTRACT,
+        {
+            "{summary_limit}": str(LIMITS.episode_summary),
+            "{decision_limit}": str(LIMITS.decision),
+            "{timeline_limit}": str(LIMITS.timeline),
+            "{experience_limit}": str(LIMITS.experience),
+        },
+    )
+    output = hub.write("episode.extract", prompt, model_inputs)
     summary = output.get("episode_summary")
     raw_drafts = output.get("drafts")
     if not isinstance(summary, str) or not isinstance(raw_drafts, list):
@@ -396,6 +429,7 @@ def extract_episode(
         )
         if draft:
             valid[draft["draft_id"]] = draft
+    _witness_validations(valid.values(), messages)
     dropped = len(raw_drafts) - len(valid)
     if dropped:
         # Drafts whose evidence does not hold are dropped, never the whole Episode: retrying
@@ -413,7 +447,8 @@ def extract_episode(
     summary = strip_tokens(summary, unwitnessed_tokens(summary, corpus))
     if valid and not summary.strip():
         summary = "。".join(draft["content"] for draft in valid.values())
-    result.update(episode_summary=summary.strip()[:200], drafts=list(valid.values()))
+    summary = cut_at_sentence(summary, LIMITS.episode_summary)[0]
+    result.update(episode_summary=summary, drafts=list(valid.values()))
     if valid:
         result["extract_status"] = "drafted"
     return result
