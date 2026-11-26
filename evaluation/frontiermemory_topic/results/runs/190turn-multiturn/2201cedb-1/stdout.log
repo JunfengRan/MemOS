@@ -1,0 +1,67 @@
+trace-id | path=None | memos.api.config - WARNING - config.py:207 - init - missing NACOS_SERVER_ADDR / AK / SK / DATA_ID
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 2 of 5 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 2 of 4 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 1 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 3 of 3 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 3 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 6 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 3 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 2 of 4 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 2 of 3 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 2 of 7 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 5 of 6 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 7 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 6 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 6 of 6 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 2 of 4 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 4 of 5 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 6 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 5 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 2 of 6 drafts without valid evidence
+Wave 1 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 3 of 5 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 2 of 11 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 9 drafts without valid evidence
+Wave 2 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 4 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 10 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 10 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 4 drafts without valid evidence
+Wave 3 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 6 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 5 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 4 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 7 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 3 drafts without valid evidence
+Wave 4 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 2 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 1 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 5 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 2 drafts without valid evidence
+Wave 5 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 4 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 5 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 3 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 1 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 4 drafts without valid evidence
+Wave 6 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 2 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 2 of 5 drafts without valid evidence
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 1 drafts without valid evidence
+Wave 7 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 2 drafts without valid evidence
+Wave 8 completed
+Wave 9 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 3 drafts without valid evidence
+Wave 10 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 3 drafts without valid evidence
+Wave 11 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 2 of 4 drafts without valid evidence
+Wave 12 completed
+Wave 13 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 5 drafts without valid evidence
+Wave 14 completed
+Wave 15 completed
+trace-id | path=None | memos.project_memory.add_extraction - WARNING - add_extraction.py:437 - extract_episode - Project Episode extraction dropped 1 of 2 drafts without valid evidence
+Wave 16 completed
+Flush completed: {'space_id': 'frontier-pilot', 'ran': True, 'formation_version': 8, 'topic_ids': ['topic_2a1316892730415ba563b534912968f9', 'topic_2e16d473789b4b929da5996300349e06', 'topic_710ac84dd78b435ca7e42cd2fc797038', 'topic_b779f568883542b3810216711b594da5'], 'created_topic_ids': [], 'moved': {'b8ad352c-94c0-43b0-96b2-a1f72b3bcf27': 'topic_b779f568883542b3810216711b594da5', '366c7bb5-de97-4f92-af65-da88410abc90': 'topic_2e16d473789b4b929da5996300349e06', 'a80eaaf6-7536-4a18-bd9f-e57d011356ae': 'topic_2a1316892730415ba563b534912968f9', 'ef613fde-14d2-4afa-8d28-9ff39a2e3682': 'topic_710ac84dd78b435ca7e42cd2fc797038'}, 'staged': 4, 'rejected': []}
