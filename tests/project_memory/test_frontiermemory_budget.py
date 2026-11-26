@@ -143,3 +143,20 @@ def test_rejects_wrong_config_and_unsupported_wire_options_without_cost(profile)
     profile.write_text(profile.read_text().replace(MODEL, "not-deepseek"))
     with pytest.raises(ValueError, match="model"):
         make_llm(profile, unexpected)
+
+
+def test_backup_profile_uses_its_own_model_without_deepseek_thinking(profile, tmp_path):
+    profile.write_text(profile.read_text().replace(MODEL, "gpt-6-luna"))
+    seen = []
+
+    def handler(request):
+        seen.append(json.loads(request.read()))
+        usage = {"prompt_tokens": 10, "completion_tokens": 5}
+        return completion(model="gpt-6-luna-2026-09-22", usage=usage)
+
+    llm = build_budgeted_llm(
+        profile, tmp_path / "ledger.jsonl", transport=httpx.MockTransport(handler)
+    )
+    assert llm.generate(MESSAGES) == '{"ok":true}'
+    assert seen[0]["model"] == "gpt-6-luna" and "thinking" not in seen[0]
+    assert llm.ledger.summary()["requests"] == 1

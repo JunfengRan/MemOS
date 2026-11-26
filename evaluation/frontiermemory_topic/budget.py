@@ -10,6 +10,7 @@ import os
 
 from contextlib import contextmanager
 from contextvars import ContextVar
+from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import TYPE_CHECKING, Any
 from uuid import uuid4
@@ -35,9 +36,45 @@ if TYPE_CHECKING:
 MODEL = "deepseek-v4.1-flash-1017"
 RESPONSE_MODELS = frozenset({MODEL, "deepseek-v4-1-flash-261017", "deepseek-flash"})
 MAX_OUTPUT = 4096
-# Positive units are integer nanodollars at the peak, uncached Flash rates.
+# Positive units are integer nanodollars per token at peak, uncached rates.
 INPUT_PRICE = 300
 OUTPUT_PRICE = 1200
+
+
+@dataclass(frozen=True)
+class ModelProfile:
+    """One model the replay may run Add on: its accepted response names, prices and payload."""
+
+    model: str
+    response_prefixes: tuple[str, ...]
+    input_price: int
+    output_price: int
+    max_output: int
+    extra_body: dict[str, Any] = field(default_factory=dict)
+
+    def accepts(self, returned: str) -> bool:
+        return returned == self.model or returned.startswith(self.response_prefixes)
+
+    def estimate(self, input_tokens: int, output_tokens: int) -> int:
+        return input_tokens * self.input_price + output_tokens * self.output_price
+
+
+# Backup models for when the DeepSeek gateway is down. Their prices are conservative budget
+# estimates, not quotes; reasoning models spend part of max_output before answering.
+PROFILES = {
+    MODEL: ModelProfile(
+        MODEL,
+        tuple(RESPONSE_MODELS),
+        INPUT_PRICE,
+        OUTPUT_PRICE,
+        MAX_OUTPUT,
+        {"thinking": {"type": "disabled"}},
+    ),
+    "gpt-6-luna": ModelProfile("gpt-6-luna", ("gpt-6-luna",), 1500, 6000, 8192),
+    "claude-haiku-5-5": ModelProfile(
+        "claude-haiku-5-5", ("claude-haiku-5-5",), 1000, 5000, MAX_OUTPUT
+    ),
+}
 NANO_PER_USD = 1_000_000_000
 CHAT_OVERHEAD = 512
 _SCOPE: ContextVar[str] = ContextVar("frontiermemory_budget_scope", default="untagged")
@@ -62,7 +99,7 @@ def budget_scope(scope: str) -> Iterator[None]:
 
 
 def _estimate(input_tokens: int, output_tokens: int) -> int:
-    return input_tokens * INPUT_PRICE + output_tokens * OUTPUT_PRICE
+    return PROFILES[MODEL].estimate(input_tokens, output_tokens)
 
 
 def _token_count(value: Any) -> int | None:
@@ -91,10 +128,11 @@ def _usage(body: dict) -> dict[str, int] | None:
 class UsageLedger:
     """An append-only JSONL ledger, locked across readers and billable attempts."""
 
-    def __init__(self, path: Path, cap_usd: float) -> None:
+    def __init__(self, path: Path, cap_usd: float, profile: ModelProfile | None = None) -> None:
         if not math.isfinite(cap_usd) or not 0 < cap_usd <= 10:
             raise ValueError("DeepSeek budget must be greater than $0 and at most $10")
         self.path = path
+        self.profile = profile or PROFILES[MODEL]
         self.cap = math.floor(cap_usd * NANO_PER_USD)
         self.path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -150,7 +188,7 @@ class UsageLedger:
 
     def reserve(self, input_bound: int, max_output: int) -> tuple[str, int]:
         """Durably reserve an upper estimate before sending a request."""
-        bound = _estimate(input_bound, max_output)
+        bound = self.profile.estimate(input_bound, max_output)
         with self._locked() as ledger:
             requests, stopped = self._read(ledger)
             if stopped:
@@ -166,7 +204,7 @@ class UsageLedger:
                 event="reserve",
                 id=call_id,
                 scope=_SCOPE.get(),
-                requested_model=MODEL,
+                requested_model=self.profile.model,
                 input_bound=input_bound,
                 max_output_tokens=max_output,
                 charge_nano_usd=bound,
@@ -184,7 +222,11 @@ class UsageLedger:
         stop_reason: str | None = None,
     ) -> None:
         """Replace a reservation with peak-rate measured usage when available."""
-        charge = _estimate(usage["input_tokens"], usage["output_tokens"]) if usage else reserved
+        charge = (
+            self.profile.estimate(usage["input_tokens"], usage["output_tokens"])
+            if usage
+            else reserved
+        )
         if charge > reserved:
             stop_reason = "DeepSeek usage exceeded its request reservation"
         with self._locked() as ledger:
@@ -243,16 +285,17 @@ class _MeteredTransport(httpx.BaseTransport):
         raw = request.read()
         payload = json.loads(raw)
         max_output = payload.get("max_tokens")
+        profile = self.ledger.profile
         if (
             request.method != "POST"
             or request.url != self.target
-            or payload.get("model") != MODEL
+            or payload.get("model") != profile.model
             or _token_count(max_output) is None
-            or not 0 < max_output <= MAX_OUTPUT
-            or payload.get("thinking") != {"type": "disabled"}
+            or not 0 < max_output <= profile.max_output
+            or any(payload.get(key) != value for key, value in profile.extra_body.items())
             or payload.get("temperature") != 0
             or set(payload)
-            - {"model", "messages", "max_tokens", "thinking", "temperature", "top_p"}
+            - {"model", "messages", "max_tokens", "temperature", "top_p", *profile.extra_body}
         ):
             raise BudgetStopError("Unsupported DeepSeek request for the pilot")
         call_id, reserved = self.ledger.reserve(len(raw) + CHAT_OVERHEAD, max_output)
@@ -281,7 +324,7 @@ class _MeteredTransport(httpx.BaseTransport):
             self.ledger.settle(call_id, reserved, "invalid_json")
             raise GatewayRequestError("DeepSeek gateway returned an invalid completion body")
         model = body.get("model")
-        if not isinstance(model, str) or model not in RESPONSE_MODELS:
+        if not isinstance(model, str) or not self.ledger.profile.accepts(model):
             response.close()
             self.ledger.settle(
                 call_id,
@@ -337,8 +380,9 @@ def build_budgeted_llm(
 ) -> BudgetedOpenAILLM:
     """Load the existing DeepSeek profile and make every chat attempt budgeted."""
     profile = dotenv_values(profile_path, interpolate=False)
-    if profile.get("MODEL") != MODEL:
-        raise ValueError("The DeepSeek profile must pin the expected Flash model")
+    model = PROFILES.get(profile.get("MODEL") or "")
+    if model is None:
+        raise ValueError(f"The model profile must pin one of {sorted(PROFILES)}")
     api_base = (profile.get("OPENAI_API_BASE") or "").rstrip("/")
     api_key = profile.get("OPENAI_API_KEY") or ""
     base_url = httpx.URL(api_base)
@@ -352,17 +396,17 @@ def build_budgeted_llm(
     ):
         raise ValueError("The DeepSeek profile requires an HTTPS gateway and an API key")
     config = OpenAILLMConfig(
-        model_name_or_path=MODEL,
+        model_name_or_path=model.model,
         api_key=api_key,
         api_base=api_base,
         temperature=0,
-        max_tokens=MAX_OUTPUT,
+        max_tokens=model.max_output,
         top_p=1.0,
         remove_think_prefix=True,
         rate_limit=LLMRateLimitConfig(enabled=False),
-        extra_body={"thinking": {"type": "disabled"}},
+        extra_body=dict(model.extra_body) or None,
     )
-    ledger = UsageLedger(ledger_path, cap_usd)
+    ledger = UsageLedger(ledger_path, cap_usd, model)
     target = httpx.URL(f"{api_base}/chat/completions")
     # The product client can log prompt and response bodies at INFO.
     logging.getLogger("memos.llms.openai").setLevel(logging.WARNING)
