@@ -22,7 +22,12 @@ from urllib.parse import urlsplit
 from uuid import uuid4
 
 from memos.project_memory.add_runtime import EpisodeAddRuntime, RuntimeSettings
-from memos.project_memory.add_store import PostgresAddStore
+from memos.project_memory.add_store import (
+    EPISODE_COLUMNS,
+    EPISODE_FROM,
+    PostgresAddStore,
+    episode_view,
+)
 from memos.project_memory.judge import ModelHub
 
 
@@ -118,6 +123,8 @@ def observe_turn(
     staged_status = row.get("staged_status")
     if staged_status == "moved" and (destination := row.get("moved_to_topic_id")):
         targets.add(destination)
+    if row.get("topic_id"):  # episodes.topic_id: where Formation finally moved the Episode
+        targets.add(row["topic_id"])
     if missing_topics := targets - live_topic_ids:
         raise ValueError(f"Episode references absent Topic IDs: {sorted(missing_topics)}")
     outcome = row["outcome"]
@@ -126,6 +133,8 @@ def observe_turn(
         "pending": "pending",
         "skipped": "no_drafts",
     }.get(outcome, "unassigned")
+    if staged_status in {"archived", "long_unassigned"}:
+        status = "unassigned"  # given up in the Default Topic, not an empty Episode
     if targets:
         status = "assigned"
     elif staged_status == "active":
@@ -133,7 +142,7 @@ def observe_turn(
     error = row.get("error") or {}
     return {
         "turn_id": row["turn_id"],
-        "episode_id": row["episode_id"],
+        "episode_id": row.get("episode_id") or row["id"],
         "topic_ids": sorted(targets),
         "witness_topic_ids": sorted(witnesses.get(row["turn_id"], set())),
         "status": status,
@@ -176,13 +185,14 @@ def drain_work(
         with runtime.store.transaction(readonly=True) as cursor:
             cursor.execute(
                 """SELECT MIN(GREATEST(
-                              updated_at, COALESCE(next_retry_at, '-infinity'),
+                              update_time, COALESCE(next_retry_time, '-infinity'),
                               COALESCE((organize_result->'work'->>'until')::timestamptz, '-infinity'),
-                              COALESCE(dispatched_at + %s * interval '1 second', '-infinity')
+                              COALESCE((organize_result->>'dispatched_at')::timestamptz
+                                       + %s * interval '1 second', '-infinity')
                           )) AS next_at
-                   FROM episodes
-                   WHERE project_id = %s AND outcome = 'pending' AND state <> 'open'""",
-                (runtime.settings.publish_stale_seconds, runtime.store.project_id),
+                   FROM add_jobs
+                   WHERE outcome = 'pending' AND stage <> 'episode_open'""",
+                (runtime.settings.publish_stale_seconds,),
             )
             next_at = cursor.fetchone()["next_at"]
         if next_at is None:
@@ -216,15 +226,15 @@ def export_state(store: PostgresAddStore, turns: list[dict[str, Any]]) -> dict[s
     witnesses = witness_index(topics, message_turns)
     with store.transaction(readonly=True) as cursor:
         cursor.execute(
-            """SELECT et.turn_id, et.episode_id, e.outcome, e.result, e.close_reason,
-                      e.extract_status, e.drafts, e.episode_summary, e.staged_status,
-                      e.staged_reason, e.moved_to_topic_id, e.error
-               FROM episode_turns et JOIN episodes e ON e.id = et.episode_id
-               WHERE et.project_id = %s AND et.space_id = %s""",
-            (store.project_id, SPACE),
+            f"""SELECT m.message_id AS turn_id, {EPISODE_COLUMNS}
+               FROM messages m
+               JOIN {EPISODE_FROM} ON e.conversation_key = m.conversation_key
+                AND m.msg_seq BETWEEN e.message_seq_start AND e.message_seq_end
+               WHERE m.role = 'user' AND e.space_id = %s""",
+            (SPACE,),
         )
         observations = {
-            row["turn_id"]: observe_turn(row, live_topic_ids, witnesses)
+            row["turn_id"]: observe_turn(episode_view(row), live_topic_ids, witnesses)
             for row in cursor.fetchall()
         }
     order = [turn["turn_id"] for turn in turns]
@@ -321,8 +331,12 @@ def main() -> int:
     redis.ping()
     schema = f"frontier_eval_{uuid4().hex[:12]}"
     store = PostgresAddStore(
-        {"dsn": dsn, "schema_name": schema, "embedding_dimension": dimension},
-        project_id=schema,
+        {
+            "dsn": dsn,
+            "schema_name": schema,
+            "embedding_dimension": dimension,
+            "text_search_parser": "simple",
+        }
     )
 
     complete = False
@@ -334,7 +348,7 @@ def main() -> int:
         with store.transaction() as cursor:
             cursor.execute(
                 "INSERT INTO spaces (id, space_name, project_id) VALUES (%s, %s, %s)",
-                (SPACE, "FrontierMemory pilot", store.project_id),
+                (SPACE, "FrontierMemory pilot", schema),
             )
             cursor.execute(
                 "INSERT INTO domains (id, space_id, domain) VALUES (%s, %s, %s)",
